@@ -1,0 +1,461 @@
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script> 
+$(document).scroll(function () {
+    var y = $(this).scrollTop();
+    if (y < 100) {
+        $('.employeeStick').show();
+    } 
+    if (y > 2920) {
+        $('.employeeStick').fadeOut();
+    } 
+    else {
+        $('.employeeStick').fadeIn();
+    }
+
+});
+</script>
+
+<style>
+body {
+	margin: 0px;
+}
+#EmployeeBack {
+/* min-width: 2000px; */
+/* min-height: 988px; */
+background-image: url(IMGS/Employee-Background.jpg);
+background-attachment: fixed;
+background-position: center 0%;
+/* position: initial; */
+}
+#EmployeeSecondTwo {
+	width: 1079px;
+	height: 4099px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#EmployeeSecond {
+	width: 1079px;
+	height: 4099px;
+	background-image: url(IMGS/product-images-use.jpg);
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 0px
+}
+.employeeStick {
+display: block;
+position: fixed;
+bottom: 0;
+width: 310px;
+height: 511px;
+background: red;
+z-index: 1;
+top: 14px;
+}
+#EmployeeCard {
+	width: 331px;
+	height: 533px;
+	position: inherit;
+	top: 0px;
+	left: 35px;
+	padding-top: 20px;
+}
+#priceSetA {
+	position: absolute;
+	top: 63px;
+	left: 791px;
+	height: 700px;
+	width: 142px;
+	
+}
+
+#priceSetB {
+	position: absolute;
+	top: 793px;
+	left: 446px;
+	height: 700px;
+	width: 142px;
+}
+#priceSetC {
+	position: absolute;
+	top: 1489px;
+	left: 809px;
+	height: 700px;
+	width: 142px;
+}
+
+#priceSetD {
+	position: absolute;
+	top: 2227px;
+	left: 473px;
+	height: 700px;
+	width: 142px;
+}
+
+#priceSetE {
+	position: absolute;
+	top: 2871px;
+	left: 758px;
+	height: 700px;
+	width: 142px;
+}
+.priceBlock {
+	width: 100%; 
+	display: block; 
+	height: 167px;
+	color: #FFF;
+}
+.ProdType {
+	font-family: Gotham;
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	margin: 0px;
+	padding-bottom: 10px;
+}
+.price {
+	font-family: Gotham; 
+    font-size: 60px; 
+    text-transform: uppercase; 
+    font-weight: 400; 
+    letter-spacing: 0.00em; 
+    margin: 0px;
+    line-height: 1;
+}
+.buttonWrap {
+	width: 100%;
+	height: 37px;
+	display: block;
+}
+.buttonWrap p {
+	font-family: Gotham;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	margin: 0px;
+	color: #fff;
+	line-height: 2.7;
+}	
+.buttonLeft {
+	width: 50%;
+	height:100%;
+	background-color: rgba(228, 25, 46, 0.84);
+	display: inline-block;
+	float: left;
+}
+.buttonLeft:hover {
+	background-color: rgba(0, 0, 0, 0.83);
+	color: #fff;
+}
+.buttonRight {
+	width: 50%;
+	height: 100%;
+	background-color: rgba(228, 25, 46, 0.84);
+	display: inline-block;
+	float: right;
+}
+.buttonRight:hover {
+	background-color: rgba(0, 0, 0, 0.83);
+	color: #fff;
+}
+.buttonFull {
+	width: 100%;
+	height:100%;
+	background-color: rgba(228, 25, 46, 0.84);
+	display: inline-block;
+	float: left;
+}
+.buttonFull:hover {
+	background-color: rgba(0, 0, 0, 0.83);
+	color: #fff;
+}
+
+</style>
+</head>
+<body>
+<div id="EmployeeBack">
+	<div id="EmployeeSecondTwo">
+	<div id="EmployeeSecond">
+
+		<div id="EmployeeCard">
+			<img class="employeeStick" src="IMGS/update-employee-overlay.png" style="position: fixed; box-shadow: 4px 6px 6px rgba(14, 14, 14, 0.3);">
+
+
+
+		</div>
+
+
+		<!-- PRICE A -->
+
+	<div id="priceSetA">
+		<div class="priceBlock" style="">
+<img src="IMGS/price-a-1.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-a-2.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-a-3.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+	</div>	
+
+
+<!-- PRICE SET B -->
+
+	<div id="priceSetB">
+		<div class="priceBlock" style="">
+<img src="IMGS/price-b-1.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-b-2.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-b-3.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+	</div>	
+
+
+
+
+<!-- PRICE SET C -->
+
+	<div id="priceSetC">
+		<div class="priceBlock" style="">
+<img src="IMGS/price-c-1.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-c-2.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonFull">
+     <p align="center">SHOP GIRLS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-c-3.png" class="ProdType">
+  <div class="buttonWrap">
+    <div class="buttonFull">
+     <p align="center">SHOP GIRLS</p>
+    </div>
+    
+  </div>
+  
+  
+</div>
+
+	</div>	
+
+
+
+
+<!-- PRICE SET D -->
+
+	<div id="priceSetD">
+		<div class="priceBlock" style="">
+<img src="IMGS/price-d-1.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-d-2.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonLeft">
+     <p align="center">GIRLS</p>
+    </div>
+    <div class="buttonRight">
+     <p align="center">GUYS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+
+	</div>	
+
+
+
+
+<!-- PRICE SET E -->
+
+
+	<div id="priceSetE">
+		<div class="priceBlock" style="">
+<img src="IMGS/price-e-1.png" class="ProdType">
+  <div class="buttonWrap">
+    <div class="buttonFull">
+     <p align="center">SHOP GIRLS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-e-2.png" class="ProdType">
+  <div class="buttonWrap">
+    <div class="buttonFull">
+     <p align="center">SHOP GIRLS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+<div class="priceBlock" style="">
+<img src="IMGS/price-e-3.png" class="ProdType">
+  <div class="buttonWrap">
+   <div class="buttonFull">
+     <p align="center">SHOP GIRLS</p>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+	</div>	
+
+
+
+
+<!-- PRICE SET DONE -->
+
+	</div>	
+</div>
+
+
+
+
+</div>	
+
+</body>
