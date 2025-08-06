@@ -1,0 +1,1268 @@
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="attach.js"></script>
+<style>
+body {
+	 margin: 0px;
+}
+#responsive-A {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    background-image: url("013116_AERO_HP_BACKGROUND.jpg");
+    background-size: cover;
+    background-position: 0 0px;
+    min-width: 320px;
+     max-height: 750px;
+
+}
+#responsive-A-border {
+    border: solid 40px rgba(0, 137, 150, 0.81);
+    width: auto;
+    height: 89%;
+    position: relative;
+}
+
+#responsive-A-Over {
+    max-width: 559px;
+    min-width: 400px;
+    width: 100%;
+    height: 410px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 72px;
+}
+.resButWrap {
+    width: 80%;
+    height: 62px;
+    margin-right: 9%;
+    margin-left: 9%;
+    display: inline-block;
+    margin-top: -4%;
+}
+
+.resButton {
+    display: inline-block;
+    width: 47%;
+    height: 55px;
+    background-color: transparent;
+    color: #FFF;
+    left: 48px;
+    font-size: 15px;
+    font-family: Gotham;
+    line-height: 24px;
+    border: solid 2px #FFF;
+    font-weight: 500;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----                  b spot                     ---*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+.Bspot-wrapper {
+    height: 500px;
+    position: relative;
+    min-width: 1080px;
+    margin-top: 50px;
+}
+
+#bspot-left-Over {
+    width: 566px;
+    height: 137px;
+    opacity: 1;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    margin-left: 2%;
+    margin-right: 157px;
+    margin-top: 190px;
+}
+
+#bspot-left {
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 10px;
+    background-image: url("013116_AERO_HP_TEES_BACKGROUND.jpg");
+    background-position: 0 bottom;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+#bspot-left-Logo {
+    width: 425px;
+    height: 31px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    position: relative;
+    left: -25px;
+    margin-top: 28px;
+}
+
+.bspotleftbuttonwrap {
+    width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: -14px;
+/* display: block; */
+}
+
+.bspotrightbuttonwrap {
+    width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 16px;
+}
+
+#bspot-right {
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 10px;
+    background-image: url("013116_AERO_HP_SHORTS_BACKGROUND.jpg");
+    background-position: top;
+    background-size: cover;
+    position: absolute;
+    opacity: 0;
+}
+
+#bspot-right-Over {
+    width: 307px;
+    height: 130px;
+    opacity: 1;
+    overflow: hidden;
+    position: absolute;
+    top: 187px;
+    left: 65%;
+}
+
+
+#bspot-right-Logo {
+    width: 380px;
+    height: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+    position: relative;
+    left: 2px;
+    margin-top: 28px;
+}
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----             jquery transitions              ---*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+.transition {
+    -webkit-transition: 500ms all ease-out;
+    -moz-transition: 500ms all ease-out;
+    -ms-transition: 500ms all ease-out;
+    -o-transition: 500ms all ease-out;
+    transition: 500ms all ease-out;
+}
+
+.fade {
+    opacity: 0;
+}
+
+.CTA-oct {
+    width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 110px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+.leftCTA {
+    display: inline-block;
+    width: 475px;
+    height: 110px;
+    float: left;
+    opacity: .3;
+    margin-left: 30px;
+}
+
+.leftCTA:hover {
+    opacity: 1;
+}
+
+.rightCTA {
+    display: inline-block;
+    width: 405px;
+    height: 110px;
+    float: right;
+    opacity: .3;
+    position: relative;
+    left: 0;
+}
+
+.rightCTA:hover {
+    opacity: 1;
+}
+
+.CleftCTA {
+    display: inline-block;
+    width: 480px;
+    height: 110px;
+    float: left;
+    opacity: .3;
+    margin-left: 30px;
+}
+
+.CleftCTA:hover {
+    opacity: 1;
+}
+
+.CrightCTA {
+    display: inline-block;
+    width: 480px;
+    height: 110px;
+    float: right;
+    opacity: .3;
+    position: relative;
+    left: 0;
+}
+
+.CrightCTA:hover {
+    opacity: 1;
+}
+
+.transparent {
+    opacity: 0 !important;
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+    -ms-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+}
+
+.hoverFadeOut {
+    opacity: 0 !important;
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+    -ms-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+}
+
+.hoverFadeIn {
+    opacity: 1 !important;
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+    -ms-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+    z-index: 15;
+}
+
+.hoverFadeOutC {
+    opacity: 0 !important;
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+    -ms-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+}
+
+.hoverFadeInC {
+    opacity: 1 !important;
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+    -ms-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+    z-index: 15;
+}
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----                  buttons                    ---*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+.btn {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-weight: 400;
+    line-spacing: 0;
+    text-transform: uppercase;
+    position: relative;
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+    padding: 16px 0;    
+    width: 170px;
+    font-weight: 700;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    z-index: 10000;
+    display:inline-block;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+        text-decoration: none;
+}
+
+.btn a:hover {
+    text-decoration: none;
+}
+
+
+
+.btn-aban {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-weight: 400;
+    line-spacing: 0;
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    border: 1px solid #ee4d9d;
+    color: #fff;
+    background-color: #ee4d9d;
+    padding: 11px 43px;
+    font-weight: 700;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    z-index: 10000;
+}
+
+.btn-aban:hover {
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+}
+
+.btnVideo {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-weight: 400;
+    line-spacing: 0;
+    text-transform: uppercase;
+    position: relative;
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+    padding: 11px 26px;
+    font-weight: 700;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    z-index: 10000;
+}
+
+.btnVideo:hover {
+    position: relative;
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 11px 26px;
+    font-weight: 700;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.btnblog {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-weight: 400;
+    line-spacing: 0;
+    text-transform: uppercase;
+    position: absolute;
+    color: #000;
+    padding: 11px 26px;
+    font-weight: 700;
+    margin: 5px;
+    text-decoration: underline;
+    font-size: 14px;
+    z-index: 10000;
+}
+
+.btnblog:hover {
+    text-decoration: none;
+}
+
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----             price text spots                ---*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+.price-point-title {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    font-size: 34px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+
+}
+
+.price-point-title-light {
+    font-family: Gotham-Light,Helvetica,Arial,sans-serif;
+    font-size: 34px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 9px rgba(0,0,0,0.3);
+}
+
+.price-point-sub {
+    font-family: Gotham,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    line-height: 18px;
+    letter-spacing: 1px;
+}
+
+.price-point-sub-det {
+    font-family: Gotham,Helvetica,Arial,sans-serif;
+    font-size: 8px;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.price-point-this {
+    font-family: Gotham-Book,Helvetica,Arial,sans-serif;
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+    padding: 8px 0;
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.price-point-this sup {
+    font-family: Gotham,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+  
+    padding: 5px 0;
+}
+.priceTablet {
+	display: none;
+}
+.room-title {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    font-size: 48px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+
+}
+
+.room-title-small {
+    font-family: Gotham-Light,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+
+}
+.price-point-logo {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    font-size: 27px;
+    color: #000;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.price-point-logo-light {
+    font-family: Gotham-Light,Helvetica,Arial,sans-serif;
+    font-size: 27px;
+    color: #000;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----          responsive media query            ---*/
+/*----------------------------------------------------*/
+#teenSpot {
+    width: 100%;
+    display: inline-block;
+    height:auto;
+}
+#teenImg {
+    width: 90%;
+    max-width: 1080px;
+    /* background-image: url("020616_AERO_HP_TEENVOGUE.JPG"); */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    min-width: 500px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1270px) {
+
+	.priceTablet {
+	font-family: Gotham-Light,Helvetica,Arial,sans-serif;
+    font-size: 19px;
+    color: #9D9D9D;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+    margin-top: -30px;
+    display: block;
+}
+
+	.Bspot-wrapper {
+    max-height: 437px;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    min-width: 500px;
+    min-height: 300px;
+    height: 100%;
+    margin-left: 2%;
+
+}
+#bspot-left {
+    width: 47%;
+    max-height: 500px;
+    margin-bottom: 10px;
+    background-image: url("013116_AERO_HP_TEES_BACKGROUND.jpg");
+    background-position: -617px 0;
+    background-size: cover;
+   position: inherit;
+    z-index: 1;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    opacity: 1!IMPORTANT;
+    float: left;
+    display: inline-block;
+    min-height: 300px;
+    height: 100%;
+    margin-right: 2%;
+}
+#bspot-right {
+      width: 47%;
+    max-height: 500px;
+    margin-bottom: 10px;
+    background-image: url("013116_AERO_HP_SHORTS_BACKGROUND.jpg");
+    background-position: -263px -1px;
+    background-size: cover;
+    position: inherit;
+    opacity: 1 !Important;
+    display: inline-block;
+    float: left;
+    min-height: 300px;
+    height: 100%;
+}
+#bspot-right-Over {
+display: none;
+}
+#bspot-right-Logo {
+    width: 100%;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    position: relative;
+    left:0%;
+    margin-top: -20px;
+}
+#bspot-left-Over {
+    display: none;
+}
+#bspot-left-Logo {
+    height: 40px;
+    margin-top: -20px;
+}
+.CTA-oct {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 110px;
+    margin-top: 5px;
+    margin-bottom: 70px;
+}
+.leftCTA {
+    display: inline-block;
+    width: 48%;
+    height: 97px;
+    float: left;
+    opacity: 1;
+    margin-left: 30px;
+}
+.rightCTA {
+     display: inline-block;
+    width: 46%;
+    height: 110px;
+    float: left;
+    opacity: 1;
+    position: relative;
+    left: 0;
+}
+.price-point-title {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    font-size: 34px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+	padding-bottom: 0px; 
+    text-transform: uppercase;
+    height: 8px;
+}
+.price-point-sub {
+    font-family: Gotham,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 14px;
+    letter-spacing: 2px;
+    height: 0px;
+}
+.price-point-this {
+   font-family: Gotham-Book,Helvetica,Arial,sans-serif;
+    font-size: 53px;
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 0px;
+    margin-top: 37px;
+
+}
+.price-point-this sup {
+    font-family: Gotham,Helvetica,Arial,sans-serif;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+    padding: 0;
+    line-height: 0px;
+}
+
+
+}
+@media only screen and (max-width: 990px) {
+.CTA-oct {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 174px;
+    margin-top: -6px;
+}
+	.Bspot-wrapper {
+    max-height: 348px;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    min-width: 500px;
+    min-height: 300px;
+    height: 100%;
+    margin-left: 2%;
+}
+#bspot-left {
+    background-position: right 0;
+
+}
+#bspot-left-Logo {
+    width: 100%;
+    height: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    position: relative;
+    left: 0%; 
+    margin-top: 8px;
+}
+#bspot-right {
+
+    background-position: 26% 0px;
+}
+.rightCTA {
+    display: inline-block;
+    width: 50%;
+    height: 110px;
+    float: left;
+    opacity: 1;
+    position: relative;
+    margin-left: -1%;
+    margin-top: -15px;
+}
+.leftCTA {
+    display: inline-block;
+    width: 50%;
+    height: 110px;
+    float: left;
+    opacity: 1;
+    position: relative;
+    margin-left: 0%;
+    margin-top: -15px;
+}
+.bspotleftbuttonwrap {
+    width: 371px;
+    margin-left: auto;
+    margin-right: auto;
+    /* position: relative; */
+    left: 0px;
+    display: block;
+}
+#bspot-right-Logo {
+    width: 100%;
+    height: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    /* position: relative; */
+    left: 0px;
+    margin-top: 7px;
+}
+.bspotrightbuttonwrap {
+    width: 371px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 0%;
+}
+}
+
+
+@media only screen and (max-width: 780px) {
+	.Bspot-wrapper {
+    max-height: 290px;
+}
+.price-point-logo {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    font-size: 21px;
+}
+.price-point-logo-light {
+    font-family: Gotham-Light,Helvetica,Arial,sans-serif;
+    font-size: 21px;
+    padding-bottom: 9px;
+    }
+    .priceTablet {
+    	font-size: 15px;
+    }
+    .bspotleftbuttonwrap {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    /* position: relative; */
+    left: 2%;
+    display: block;
+}
+.bspotrightbuttonwrap {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 1%;
+}
+.rightCTA {
+    display: inline-block;
+    width: 50%;
+    height: 110px;
+    float: left;
+    opacity: 1;
+    position: relative;
+    margin-left: 0%;
+    margin-top: -15px;
+}
+#bspot-right-Logo {
+    width: 100%;
+    height: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 13px;
+    /* position: relative; */
+    left: 0px;
+    margin-top: 2px;
+}
+#bspot-left-Logo {
+    width: 100%;
+    height: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 13px;
+    position: relative;
+    left: 0%;
+    margin-top: 2px;
+}
+.btn {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-weight: 400;
+    line-spacing: 0;
+    text-transform: uppercase;
+    position: relative;
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+    padding: 16px 0;
+    min-width: 135px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    z-index: 10000;
+    display: inline-block;
+    max-width: 341px;
+    width: 93%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+	#responsive-A {
+    height: 700px;
+}
+	#responsive-A-Over {
+    max-width: 559px;
+    min-width: 360px;
+    width: 100%;
+    height: 410px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 60px;
+}
+	.resButWrap {
+	margin-top: -4%;
+}
+	.resButton {
+    display: inline-block;
+    width: 87%;
+    height: 55px;
+    background-color: transparent;
+    color: #FFF;
+    left: 48px;
+    font-size: 15px;
+    font-family: Gotham;
+    line-height: 24px;
+    border: solid 3px #FFF;
+    font-weight: 500;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 4%;
+}
+
+.resButWrap {
+    width: 86%;
+    height:55px;
+    margin-right: ;
+    margin-left: 12%;
+}
+#responsive-A-border {
+    border: solid 30px rgba(0, 137, 150, 0.81);
+    width: auto;
+    height: 92%;
+    position: relative;
+}
+}
+
+@media only screen and (max-width: 585px) {
+	.aero {
+		display: none;
+	}
+
+#bspot-right-Logo {
+    width: 99%;
+    height: 54px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    /* position: relative; */
+    left: 0px;
+    margin-top: 6px;
+    }
+    #bspot-left-Logo {
+    width: 90%;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    position: relative;
+    left: 0%;
+    margin-top: 0px;
+}
+}
+@media only screen and (max-width: 545px) {
+
+	.rightCTA {
+    display: inline-block;
+    width: 48%;
+    height: 110px;
+    float: left;
+    opacity: 1;
+    position: relative;
+    margin-left: 2%;
+    margin-top: -12px;
+}
+.price-point-logo-light {
+    font-family: Gotham-Light,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    }
+    .price-point-logo {
+    font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+}
+#bspot-left-Logo {
+    width: 90%;
+    height: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    position: relative;
+    left: 0%;
+    margin-top: 0px;
+    }
+    .bspotleftbuttonwrap {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    /* position: relative; */
+    left: 2%;
+    display: block;
+}
+#bspot-right-Logo {
+    width: 99%;
+    height: 47px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    /* position: relative; */
+    left: 0px;
+    margin-top: 5px;
+}
+	.Bspot-wrapper {
+    max-height: 340px;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    min-width: 377px;
+    min-height: 200px;
+    height: 100%;
+    margin-left: 2%;
+}
+	#responsive-A-border {
+    border: solid 13px rgba(0, 137, 150, 0.81);
+    width: auto;
+    height: 96%;
+    position: relative;
+}
+#responsive-A {
+    width: 100%;
+    max-height: 578px;
+    overflow: hidden;
+    background-image: url("013116_AERO_HP_BACKGROUND.jpg");
+    background-size: cover;
+    background-position: 0 0px;
+    min-width: 305px;
+    height: ;
+}
+#responsive-A-Over {
+    margin-top: 9%;
+    min-width: 300px;
+}
+#bspot-left {
+    width: 46%;
+    max-height: 500px;
+    margin-bottom: 10px;
+    background-image: url("013116_AERO_HP_TEES_BACKGROUND.jpg");
+    background-position: 60% 0;
+    background-size: cover;
+    position: inherit;
+    z-index: 1;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    opacity: 1!IMPORTANT;
+    float: left;
+    display: inline-block;
+    min-height: 40px;
+    height: 66%;
+    margin-right: 4%;
+}
+#bspot-right {
+	width: 46%;
+    background-position: 34% 0px;
+    background-size: cover;
+    min-height: 40px;
+    height: 66%;
+}
+.CTA-oct {
+	margin-top: -136px;
+}
+}
+
+@media only screen and (max-width: 425px) {
+	#responsive-A {
+    width: 100%;
+    max-height: 472px;
+}
+
+
+.resButWrap {
+    width: 86%;
+    height: 51px;
+    margin-right: ;
+    margin-left: 12%;
+}
+.resButton {
+    display: inline-block;
+    width: 84%;
+    height: 57px;
+    background-color: transparent;
+    color: #FFF;
+    left: 48px;
+    font-size: 15px;
+    font-family: Gotham;
+    line-height: 24px;
+    border: solid 3px #FFF;
+    font-weight: 500;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 6%;
+}
+#responsive-A-Over {
+    margin-top: 29px;
+    min-width: 330px;
+    margin-left: 0%;
+}
+#responsive-A-border {
+    border: solid 13px rgba(0, 137, 150, 0.81);
+    width: auto;
+    height: 95%;
+    position: relative;
+}
+}
+@media only screen and (max-width: 335px) {
+	#responsive-A-Over {
+    margin-top: 29px;
+    min-width: 330px;
+    margin-left: -4%;
+}
+
+	}
+
+</style>
+</head>
+
+<body>
+
+<!-- A SPOT -->
+
+<div id="responsive-A">
+
+<div id="responsive-A-border">
+
+<div id="responsive-A-Over">
+
+<img src="overlay-a-spot.png" style="display: inline-block; width: 100%;">
+
+
+<!-- BUTTON CONTAINER -->
+
+<div class="resButWrap">
+
+<button class="resButton">SHOP GIRLS</button>
+
+<button class="resButton">SHOP GUYS</button>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+
+<!-- TEEN 
+
+<div id="teenSpot">
+
+<div id="teenImg">
+<img src="020616_AERO_HP_TEENVOGUE.JPG" width="100%">
+
+</div>
+
+</div>
+
+-->
+
+
+<!-- B SPOT -->
+
+<div class="Bspot-wrapper">
+
+<!-- Sweaters -->
+<div class="active" id="bspot-left">
+
+<div id="bspot-left-Over">
+<p class="price-point-title" style="color:#000; text-shadow: none; ">tees</p>
+
+<p class="price-point-sub" style="color:#000;">starting at</p>
+<p class="price-point-this" style="color:#000;">
+
+<sup style="color:#000;">$</sup>6</p>
+
+<p class="price-point-sub-det" style="color:#000;">PRICES AS MARKED</p>
+
+</div>
+
+</div>
+
+<!-- DENIM --> 
+
+<a href="http://www.aeropostale.com/girls-clothing/bottoms/shorts/family.jsp?categoryId=11327055&amp;content=021016_HP_B" title="Shop Girls Shorts">
+
+<div class="hoverFadeOut" id="bspot-right">
+
+<div id="bspot-right-Over">
+
+<p class="price-point-title" style="color:#000; text-shadow: none;">shorts</p>
+
+<p class="price-point-sub" style="color:#000;">starting at</p>
+
+<p class="price-point-this" style="color:#000;"><sup style="color:#000;"> $</sup>24</p>
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<!-- BSPOT CTAS -->
+
+<div class="CTA-oct">
+
+<div class="leftCTA js-bspot-left-link">
+<div id="bspot-left-Logo">
+
+<p class="price-point-logo-light"><span class="aero">AEROPOSTALE</span> <span class="price-point-logo">TEES</span></p>
+
+<p class="priceTablet">STARTING AT <sup style="font-size: 10px;">$</sup>6</p>
+
+</div>
+
+<div class="bspotleftbuttonwrap"> 
+
+<a href="http://www.aeropostale.com/girls-clothing/tops/tees/family.jsp?categoryId=11326860&amp;content=021016_HP_B" title="Shop Girls Tees" style="text-decoration: none;">
+<p class="btn">shop girls</p>
+</a> 
+
+<a href="http://www.aeropostale.com/guys-clothing/tops/henleys-tees/family.jsp?categoryId=11327007&amp;content=021016_HP_B" title="Shop Guys Tees" style="text-decoration: none;">
+<p class="btn">shop guys</p>
+</a>
+
+</div>
+
+</div>
+
+<div class="rightCTA js-bspot-right-link hoverFadeIn">
+
+<div id="bspot-right-Logo">
+
+<p class="price-point-logo-light"><span class="aero">AEROPOSTALE</span> <span class="price-point-logo">shorts</span></p>
+<p class="priceTablet">STARTING AT <sup style="font-size: 10px;">$</sup>24</p>
+</div>
+
+<div class="bspotrightbuttonwrap">
+
+<a href="http://www.aeropostale.com/guys-clothing/bottoms/shorts/family.jsp?categoryId=11327015&amp;content=021016_HP_B" style="text-decoration: none;">
+<p class="btn">shop girls</p>
+</a>
+<a href="http://www.aeropostale.com/guys-clothing/bottoms/shorts/family.jsp?categoryId=11327015&amp;content=021016_HP_B" style="text-decoration: none;">
+<p class="btn">shop guys</p>
+</a>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+var $jq = jQuery.noConflict();
+
+$jq(function () {
+    //  Accordion Panels
+    $jq(".accordion div").hide();
+    $jq(".accordion article").click(function () {
+        $jq(this).next(".pane").slideToggle("slow").siblings(".pane:visible").slideUp("slow");
+        $jq(this).toggleClass("current");
+        $jq(this).siblings("article").removeClass("current");
+    });
+});
+</script>
+<script>
+var onImg= "images/more.png";
+var offImg= "images/close.png";
+</script>
+<style>
+.accordion {
+    margin: 0;
+    background: #EFEFEF;
+}
+.accordion article {
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 0 0 0;
+    width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.accordion article.current {
+    background:none;
+    cursor:default
+}
+.accordion div.pane {
+    padding: 5px 10px;
+    width: 1080px;
+    background-color: #EFEFEF;
+    height: 245px;
+    border-bottom: solid 1px #ccc;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+
+
+<div class="accordion">
+     <article>
+        <img src="images/more.png" onclick="this.src = this.src == offImg ? onImg : offImg ;" style="position: absolute;"/>
+        <img src="images/111215-top-sky.png" style="width: 1080px; margin-left:auto; margin-right: auto;"></article>
+
+    <div class="pane">
+        <img src="images/111215-sky-expanded.png" style="width: 1080px; margin-left:auto; margin-right: auto;">
+    </div>
+     
+
+</div>

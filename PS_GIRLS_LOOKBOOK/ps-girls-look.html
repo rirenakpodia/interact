@@ -1,0 +1,155 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+
+var $jq = jQuery.noConflict();
+
+$jq(window).scroll(function(){
+  var windowWidth = $jq(this).width();
+  var windowHeight = $jq(this).height();
+  var windowScrollTop = $jq(this).scrollTop();
+  
+  // effect - No1
+  if(windowScrollTop < 300){
+    $jq('.firstAnim').fadeIn();
+
+   
+  }else{
+    $jq('.firstAnim').fadeOut();
+    
+  }
+    if(windowScrollTop < 1000){
+    $jq('.secondAnim').fadeIn();
+  }else{
+    $jq('.secondAnim').fadeOut();
+    
+  }
+
+  
+
+    if(windowScrollTop < 2200){
+    $jq('.thirdAnim').fadeIn();
+    
+  }else{
+    $jq('.thirdAnim').fadeOut();    
+  }
+
+   if(windowScrollTop < 3100){
+    $jq('.forthAnim').fadeIn();
+   
+  }else{
+   $jq('.forthAnim').fadeOut();  
+    
+  }
+
+
+ 
+});
+</script>
+
+<style>
+.element-to-hide{
+    visibility:hidden;
+}
+
+.slideRight {
+    visibility: visible;
+
+    animation-duration: 2.5s;
+    -webkit-animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-10%);
+    }
+    50% {
+        transform: translateX(20%);
+    }
+    65% {
+        transform: translateX(40%);
+    }
+    80% {
+        transform: translateX(40%);
+    }
+    95% {
+        transform: translateX(-20%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@-webkit-keyframes slideRight {
+    0% {
+        -webkit-transform: translateX(-10%);
+    }
+    50% {
+        -webkit-transform: translateX(20%);
+    }
+    65% {
+        -webkit-transform: translateX(40%);
+    }
+    80% {
+        -webkit-transform: translateX(40%);
+    }
+    95% {
+        -webkit-transform: translateX(-20%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+#lb-back{
+	width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+	height:auto;
+	background-image: url("ps-girls-back.png");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 0px;
+}
+#lb-body{
+	width: 1500px;
+	margin-right: auto;
+	margin-left: auto;
+	height:4000px;
+}
+
+#lb-images{
+	width: 1080px;
+	margin-right: auto;
+	margin-left: auto;
+	height:3996px;
+	background-image: url("ps-girls-body.png");
+}
+
+
+
+
+</style>
+
+<div id="lb-back">
+
+<div id="lb-images">
+
+     <img src="animate-1-use.gif" class="firstAnim">
+
+
+     <img src="animate-2-use.gif" class="secondAnim" style="position: relative; top: 600px; display: none;">
+
+     <img src="animate-3.gif" class="thirdAnim" style="display: none; position: relative;top: 1594px;left: 834px;">
+
+      <img src="animate-4.gif" class="forthAnim" style="display: none; position: relative;top: 2796px;left:0px;">
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
