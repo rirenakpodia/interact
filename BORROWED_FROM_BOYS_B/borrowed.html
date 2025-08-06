@@ -1,0 +1,509 @@
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+  var $jq = jQuery.noConflict();
+$jq(document).ready(function() {
+
+  $jq("#icon1").hover(function() {
+    $jq("#icon3a").show();
+    $jq("#icon2a").show();
+    $jq("#icon5a").show();
+    $jq("#icon6a").show();
+    $jq("#icon7a").show();
+    $jq("#icon1a").hide();
+  	$jq(".active-right").hide();
+  	$jq(".active-left").hide();
+  	$jq(this).prev().show();	
+    $jq("#look2").show();
+  	$jq("#look1").hide();
+	
+	$jq("#look3").hide();
+	$jq("#look4").hide();
+	$jq("#look5").hide();
+	$jq("#look6").hide();
+	$jq("#look7").hide();
+  
+});
+
+$jq("#icon2").hover(function() {
+    $jq("#icon1a").show();
+    $jq("#icon3a").show();
+    $jq("#icon5a").show();
+    $jq("#icon6a").show();
+    $jq("#icon7a").show();
+    $jq("#icon2a").hide();
+	$jq(".active-right").hide();
+	$jq(".active-left").hide();
+	$jq(this).prev().show();
+    $jq("#look3").show();
+	$jq("#look2").hide();
+		
+	$jq("#look1").hide();
+	
+	$jq("#look4").hide();
+	$jq("#look5").hide();
+	$jq("#look6").hide();
+	$jq("#look7").hide();
+  
+});
+
+$jq("#icon3").hover(function() {
+    $jq("#icon1a").show();
+    $jq("#icon2a").show();
+    $jq("#icon5a").show();
+    $jq("#icon6a").show();
+    $jq("#icon7a").show();
+    $jq("#icon3a").hide();
+	$jq(".active-right").hide();
+	$jq(".active-left").hide();
+	$jq(this).prev().show();
+    $jq("#look4").show();
+	$jq("#look3").hide();	
+	$jq("#look1").hide();
+	$jq("#look2").hide();
+	$jq("#look5").hide();
+	$jq("#look6").hide();
+	$jq("#look7").hide();
+  
+});
+
+$jq("#icon5").hover(function() {
+    $jq("#icon1a").show();
+    $jq("#icon2a").show();
+    $jq("#icon3a").show();
+    $jq("#icon6a").show();
+    $jq("#icon7a").show();
+    $jq("#icon5a").hide();
+	$jq(".active-left").hide();
+	$jq(".active-right").hide();
+	$jq(this).prev().show();	
+	$jq("#look5").show();
+	$jq("#look1").hide();
+	$jq("#look2").hide();
+	$jq("#look3").hide();
+	$jq("#look4").hide();
+	$jq("#look6").hide();
+	$jq("#look7").hide();
+  
+});
+$jq("#icon6").hover(function() {
+    $jq("#icon1a").show();
+    $jq("#icon2a").show();
+    $jq("#icon3a").show();
+    $jq("#icon5a").show();
+    $jq("#icon7a").show();
+    $jq("#icon6a").hide();
+	$jq(".active-left").hide();
+	$jq(".active-right").hide();
+	$jq(this).prev().show();
+	$jq("#look6").show();
+	$jq("#look1").hide();
+	$jq("#look2").hide();
+	$jq("#look3").hide();
+	$jq("#look4").hide();
+	$jq("#look5").hide();
+	$jq("#look7").hide();
+  
+});
+$jq("#icon7").hover(function() {
+    $jq("#icon1a").show();
+    $jq("#icon2a").show();
+    $jq("#icon3a").show();
+    $jq("#icon5a").show();
+    $jq("#icon6a").show();
+    $jq("#icon7a").hide();
+	$jq(".active-left").hide();
+	$jq(".active-right").hide();	
+	$jq(this).prev().show();
+	$jq("#look7").show();
+	$jq("#look1").hide();
+	$jq("#look2").hide();
+	$jq("#look3").hide();
+	$jq("#look4").hide();
+	$jq("#look5").hide();
+	$jq("#look6").hide();
+  
+});
+// $jq(".icon").click(function() {
+// 	$jq(this).add(".active");
+	
+    
+$jq("#borrowProd").queue(function animate(){
+
+        $jq("#icon1")
+        .delay(2000)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+         $jq("#icon2")
+        .delay(4000)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+         $jq("#icon3")
+        .delay(6000)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+        $jq("#icon5")
+        .delay(8000)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+         $jq("#icon6")
+        .delay(10000)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+           $jq("#icon7")
+        .delay(12000)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+
+        
+
+        });
+  
+// });
+
+$jq("#borrowProd").mouseover(function animate(){
+            $jq("#icon7").dequeue();
+            $jq("#icon6").dequeue();
+            $jq("#icon5").dequeue();
+            $jq("#icon3").dequeue();
+            $jq("#icon2").dequeue();
+            $jq("#icon1").dequeue();
+        });
+
+
+
+
+
+
+});
+
+</script>
+
+<style type="text/css">
+	#borrowedFrame {
+    width: 910px;
+    height: 700px;
+    display: inline-block;
+    position: relative;
+    margin-right: auto;
+     margin-left: auto;
+     overflow: hidden;
+}
+
+#borrowLogo{
+    width: 98px;
+    height: 700px;
+    background-color: #F5F5F5;
+    float: left;
+    display: inline-block;
+    background-image: url("images/side-logo.jpg");
+    }
+
+    #borrowProd {
+    width: 811px;
+    height: 700px;
+    background-color: #F5F5F5;
+    float: left;
+    display: inline-block;
+    position: relative;
+    }
+
+   #borrowProdA {
+     width: 811px;
+    height: 700px;
+    background-color: #F1F1F1;
+    }
+
+#borrowLeft {
+    width: 122px;
+    height: 426px;
+    background-color: #FFF;
+    float: left;
+    position: absolute;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    top: 82px;
+}
+
+#borrowRight {
+        width: 122px;
+    height: 426px;
+    background-color: #FFF;
+    float: right;
+    position: absolute;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    top: 82px;
+    left: 670px;
+    z-index: 3;
+}
+  .icon {
+    width: 120px;
+    height: 140px;
+    display: inline-block;
+    position: relative;
+}
+    
+.active-right {
+    background-image: url("images/active-right.png");
+    position: absolute;
+    width: 18px;
+    height: 37px;
+    left: 101px;
+    overflow: hidden;
+    top: 50px;
+    display: none;
+    z-index: 4;
+}
+.active-left {
+    background-image: url("images/active-left.png");
+    position: absolute;
+    width: 18px;
+    height: 37px;
+    left: 0px;
+    overflow: hidden;
+    top: 50px;
+    display: none;
+    z-index: 4;
+}
+
+    #look1 {
+    	display: block;
+        cursor: pointer;
+    }
+
+    #look2 {
+    	display: none;
+        cursor: pointer;
+    }
+    #look3 {
+    	display: none;
+        cursor: pointer;
+    }
+    #look4 {
+    	display: none;
+        cursor: pointer;
+    }
+    #look5 {
+    	display: none;
+        cursor: pointer;
+    }
+    #look6 {
+    	display: none;
+        cursor: pointer;
+    }
+        #look7 {
+    	display: none;
+        cursor: pointer;
+    }
+#icon1 {
+    width: 120px;
+    height: 140px;
+    display: inline-block;
+    position: relative;
+    background-image: url("IMG/LOOK-2-THUMB-ON.jpg");
+    
+}
+
+#icon2 {
+    width: 120px;
+    height: 140px;
+    display: inline-block;
+    position: relative;
+    background-image: url("IMG/LOOK-3-THUMB-ON.jpg");
+
+}
+
+#icon3 {
+    width: 120px;
+    height: 140px;
+    display: inline-block;
+    position: relative;
+    background-image: url("IMG/LOOK-4-THUMB-ON.jpg");
+
+}
+#icon5 {
+    width: 120px;
+    height: 140px;
+    display: inline-block;
+    position: relative;
+    background-image: url("IMG/LOOK-5-THUMB-ON.jpg");
+
+}
+
+#icon6 {
+    width: 120px;
+    height: 140px;
+    display: inline-block;
+    position: relative;
+    background-image: url("IMG/LOOK-6-THUMB-ON.jpg");
+
+}
+#icon7 {
+    width: 120px;
+    height: 140px;
+    display: inline-block;
+    position: relative;
+    background-image: url("IMG/LOOK-7-THUMB-ON.jpg");
+
+}
+
+</style>
+
+<div id="borrowedFrame">
+
+<div id="borrowLogo"></div>
+
+<div id="borrowProd">
+
+<div id="borrowLeft">
+<!-- Icon Look 1 -->
+<div class="icon">
+
+<div class="active-right">
+</div>
+<div id="icon1">
+<img src="IMG/LOOK-2-THUMB.jpg" id="icon1a"> 
+
+</div>
+
+
+</div> 
+
+<!-- Icon Look 2 -->
+<div class="icon">
+<div class="active-right">
+</div>
+<div id="icon2">
+
+<img src="IMG/LOOK-3-THUMB.jpg" id="icon2a">
+
+</div>
+</div>
+
+<!-- Icon Look 3-->
+<div class="icon">
+
+<div class="active-right">
+</div>
+
+<div id="icon3">
+<img src="IMG/LOOK-4-THUMB.jpg" id="icon3a">
+</div>
+
+</div>
+</div>
+
+
+
+<div id="borrowRight">
+
+<!-- Icon Look 5 -->
+
+<div class="icon">
+<div class="active-left">
+</div>
+
+<div id="icon5">
+<img src="IMG/LOOK-5-THUMB.jpg" id="icon5a">
+</div>
+
+</div>
+
+<!-- Icon Look 6 -->
+<div class="icon">
+
+<div class="active-left">
+</div>
+
+<div id="icon6">
+<img src="IMG/LOOK-6-THUMB.jpg" id="icon6a">
+</div>
+
+</div>
+
+<!-- Icon Look 7 -->
+<div class="icon">
+
+<div class="active-left">
+</div>
+<div id="icon7">
+<img src="IMG/LOOK-7-THUMB.jpg" id="icon7a">
+</div>
+</div>
+
+</div>
+<div id="borrowProdA">
+	
+<!-- Look 1 -->
+
+<img src="IMG/LOOK-1.jpg" id="look1">
+
+<!-- Look 2 -->
+
+<img src="IMG/LOOK-2.jpg" id="look2">
+
+<!-- Look 3 -->
+
+<img src="IMG/LOOK-3.jpg" id="look3">
+
+<!-- Look 4 -->
+
+<img src="IMG/LOOK-4.jpg" id="look4">
+
+<!-- Look 5 -->
+
+<img src="IMG/LOOK-5.jpg" id="look5">
+
+<!-- Look 6 -->
+
+<img src="IMG/LOOK-6.jpg" id="look6">
+
+<!-- Look 7 -->
+
+<img src="IMG/LOOK-7.jpg" id="look7">
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+</div>

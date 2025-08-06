@@ -1,0 +1,425 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+  var $jq = jQuery.noConflict();
+
+
+ $jq(function() {
+        
+        $jq("#bethBody")
+        .delay(750)
+        .queue(function (next) { 
+         $jq(this).css({"background-position": "-2200px"});
+         next(); 
+         });
+
+        $jq("#bethMain")
+        .delay(2750)
+        .queue(function (next) { 
+         $jq(this).fadeIn();
+         $jq("#bethSlide1").fadeIn("slow");
+         next(); 
+         });
+
+        $jq("#beth1").click(function () { 
+         $jq("#bethNav img").css({"display": "none"}); 
+         $jq("#beth1 img").css({"display": "block"});  
+         $jq("#bethSlide2").fadeOut();
+         $jq("#bethSlide3").fadeOut();
+         $jq("#bethSlide1").fadeOut();
+         $jq("#bethSlide4").fadeIn();
+        
+         });
+
+        $jq("#beth2").click(function () { 
+         $jq("#bethNav img").css({"display": "none"}); 
+         $jq("#beth2 img").css({"display": "block"});  
+         $jq("#bethSlide2").fadeOut();
+         $jq("#bethSlide1").fadeOut();
+         $jq("#bethSlide4").fadeOut();
+         $jq("#bethSlide3").fadeIn();
+        
+         });
+
+        $jq("#beth3").click(function () { 
+         $jq("#bethNav img").css({"display": "none"}); 
+         $jq("#beth3 img").css({"display": "block"});  
+         $jq("#bethSlide1").fadeOut();
+         $jq("#bethSlide3").fadeOut();
+         $jq("#bethSlide4").fadeOut();
+         $jq("#bethSlide2").fadeIn();
+        
+         });
+
+        $jq("#beth4").click(function () { 
+         $jq("#bethNav img").css({"display": "none"}); 
+         $jq("#beth4 img").css({"display": "block"});  
+         $jq("#bethSlide2").fadeOut();
+         $jq("#bethSlide3").fadeOut();
+         $jq("#bethSlide4").fadeOut();
+         $jq("#bethSlide1").fadeIn();
+        
+         });
+
+        $jq("#beth1").mouseover(function () { 
+         $jq("#bethNav img").css({"display": "none"});    
+         $jq("#beth1 img").css({"display": "block"});
+         $jq("#bethSlide2").fadeOut();
+         $jq("#bethSlide3").fadeOut();
+         $jq("#bethSlide1").fadeOut();
+         $jq("#bethSlide4").fadeIn();
+        
+         });
+
+        $jq("#beth2").mouseover(function () { 
+        $jq("#bethNav img").css({"display": "none"}); 
+         $jq("#beth2 img").css({"display": "block"});
+         $jq("#bethSlide2").fadeOut();
+         $jq("#bethSlide1").fadeOut();
+         $jq("#bethSlide4").fadeOut();
+         $jq("#bethSlide3").fadeIn();
+        
+         });
+
+        $jq("#beth3").mouseover(function () { 
+         $jq("#bethNav img").css({"display": "none"}); 
+         $jq("#beth3 img").css({"display": "block"}); 
+         $jq("#bethSlide1").fadeOut();
+         $jq("#bethSlide3").fadeOut();
+         $jq("#bethSlide4").fadeOut();
+         $jq("#bethSlide2").fadeIn();
+        
+         });
+
+        $jq("#beth4").mouseover(function () { 
+         $jq("#bethNav img").css({"display": "none"}); 
+         $jq("#beth4 img").css({"display": "block"}); 
+         $jq("#bethSlide2").fadeOut();
+         $jq("#bethSlide3").fadeOut();
+         $jq("#bethSlide4").fadeOut();
+         $jq("#bethSlide1").fadeIn();
+        
+         });
+
+        $jq("#bethNav").queue(function animate(){
+
+        $jq("#beth2")
+        .delay(5000)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+         $jq("#beth3")
+        .delay(6500)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+         $jq("#beth4")
+        .delay(8000)
+        .queue(function (next) { 
+         $jq(this).click();
+         
+         next(); 
+         });
+
+        
+
+        });
+
+        $jq("#bethMain").mouseover(function animate(){
+            $jq("#beth4").dequeue();
+            $jq("#beth3").dequeue();
+            $jq("#beth2").dequeue();
+            $jq("#beth1").dequeue();
+        });
+});
+
+
+   
+
+    
+
+        
+        
+
+
+
+</script>
+
+<style type="text/css">
+
+#bethFrame {
+    width: 910px;
+    height:464px;
+    position: relative;
+    overflow: hidden;
+}
+#bethBody {
+	width: 910px;
+	height:408px;
+	background-image: url("FINAL-COLLECTION.png");
+	position: relative;
+    overflow: hidden;
+    background-position: 0px;
+    -webkit-transition-duration: 2s; /* Safari */
+    transition-duration: 2s;
+}
+#bethMain {
+    width: 910px;
+    height: 464px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    background-color: #D9D8D4;
+
+}
+
+#bethSlide1 {
+    width: 910px;
+    position: absolute;
+    height: 500px;
+    overflow: hidden;
+     background-image: url("bethany-slide-1.jpg");
+     display: none;
+     -webkit-transition-duration: .3s; /* Safari */
+    transition-duration: .3s;
+  }
+#main-slider {
+    height: 464px;
+    background-color: #fff;
+    overflow: hidden;
+    width: 910px;
+    position: relative;
+}
+      .aslide {
+        left: 0;
+        top: 0; 
+        width: 910px;
+        height: 500px;
+      }
+      
+      #right-p  {
+        cursor: pointer;
+        opacity: 0.8;
+        position: absolute;
+         top: 311px;
+        left: 401px;
+        z-index: 10;
+      }
+     #left-p {
+    cursor: pointer;
+    opacity: 0.8;
+    position: absolute;
+    top: 311px;
+    left: 343px;
+    z-index: 10;
+}
+      
+      .showShort {
+        display: none;
+      }
+#bethSlide2 {
+    width: 910px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 464px;
+    overflow: hidden;
+    background-image: url("bethany-slide-2.jpg");
+    display: none;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }
+#bethSlide3{
+    width: 910px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 464px;
+    overflow: hidden;
+    background-image: url("bethany-slide-3.jpg");
+    display: none;
+     -webkit-transition-duration: all ease .3s;/* Safari */
+    transition-duration: all ease .3s;
+  }
+#bethSlide4 {
+    width: 910px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 464px;
+    overflow: hidden;
+    background-image: url("bethany-slide-4.jpg");
+    display: block;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }
+#overlayBeth {
+    width: 446px;
+    height: 290px;
+    position: absolute;
+    top: 40px;
+    left: 259px;
+    z-index: 1;
+    }
+  #bethNav {
+    width: 500px;
+    height: 48px;
+ 
+  }
+  #beth1 {
+    width: 90px;
+    height: 48px;
+    background-image: url("bethany-nav-1.png");
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+
+  }
+  #beth1 img {
+    display: none;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }
+
+  #beth2 {
+    width: 90px;
+    height: 48px;
+    background-image: url("beth-nav-2.png");
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }
+
+  #beth2 img {
+    display: none;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }
+
+  #beth3 {
+    width: 90px;
+    height: 48px;
+    background-image: url("beth-nav-3.png");
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }  
+  #beth3 img {
+    display: none;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }
+  #beth4 {
+    width: 90px;
+    height: 48px;
+    background-image: url("beth-nav-4.png");
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }
+   #beth4 img {
+    display: none;
+     -webkit-transition-duration: all ease .3s; /* Safari */
+    transition-duration: all ease .3s;
+  }
+
+
+</style>
+
+<div id="bethFrame">
+
+<img src="bethany-logo-use.png">
+
+<div id="bethBody">
+
+
+
+</div>
+
+<div id="bethMain">
+
+
+ <div id="overlayBeth">
+<img src="bethany-overlay.png" style="padding-left: 12px;">
+
+<div id="bethNav">
+
+<!-- BETH NAV 1 -->
+
+<div id="beth1">
+
+<img src="bethany-nav-1-hover.png" style="display: block">    
+
+</div>
+
+<!-- BETH NAV 2 -->
+
+<div id="beth2">
+ 
+<img src="beth-nav-2-hover.png">        
+
+</div>
+
+<!-- BETH NAV 3-->
+
+<div id="beth3">
+
+<img src="beth-nav-3-hover.png">         
+
+</div>
+
+<!-- BETH NAV 4 -->
+
+<div id="beth4">
+
+<img src="beth-nav-4-hover.png" >        
+
+</div>
+
+ </div>
+ </div>
+
+          <div id="bethSlide1">
+
+         
+          </div>
+      
+
+         <div id="bethSlide2">
+
+         
+          </div>
+
+
+         <div id="bethSlide3">
+
+         
+          </div>
+
+          <div id="bethSlide4">
+
+         
+          </div>
+
+
+
+</div>
+
+
+
+</div>
