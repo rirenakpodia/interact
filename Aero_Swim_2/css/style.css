@@ -1,0 +1,86 @@
+*{
+  margin : 0px;
+  padding : 0px; 
+}
+#slider{
+  position : absolute;
+  left : 0px;
+  width : 796px;
+  height : 495px;
+  overflow : hidden; 
+}
+#frame{
+  position : relative;
+  width : 800px;
+  height : 495px; 
+  overflow : hidden;
+  display : none;
+  left : -4px;
+}
+#top{
+  position : absolute;
+  left : -4000px;
+  width : 8000px;
+  height : 248px;
+}
+#top-mask{
+  position : absolute;
+  left : 0px;
+  top : 0px;
+  width : 800px;
+  height : 248px;
+  overflow : hidden; 
+}
+#bottom{
+  position : absolute;
+  left : 0;
+  top : 248px;
+  width : 8000px;
+  height : 248px; 
+  
+}
+#bottom-mask{
+  position : absolute;
+  left : 0;
+  top : 248px;
+  width : 800px;
+  height : 248px;
+  overflow : hidden;
+}
+#c{
+  position : absolute;
+  top : -496px; 
+}
+#d{
+  position : absolute;
+  top : -496px; 
+  left : 4000px; 
+}
+#bottom-infinite{
+  position : absolute;
+  top : -496px; 
+  left : 8000px;
+}
+#top-infinite{
+  position : absolute;
+  left : -4000px;
+}
+#a{
+  position : absolute;
+  left : 4000px;
+}
+#b{
+  position : absolute;
+}
+#right-arrow{
+  position : absolute;
+  left : 750px;
+  top : 200px; 
+  z-index : 2;
+}
+#left-arrow{
+  position : absolute;
+  left : 10px;
+  top : 200px; 
+  z-index : 2;
+}

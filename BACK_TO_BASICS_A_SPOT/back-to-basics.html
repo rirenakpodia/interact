@@ -1,0 +1,122 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" href="animate.css">
+<script>
+var $jq = jQuery.noConflict();
+
+$jq(document).ready(function(){
+    (function(){
+        var basicImg=$jq('.basicImg'), i=0;
+        function shuffle()
+        {
+            $jq(basicImg[i]).fadeIn(0, function(){
+                i=(i < basicImg.length-1) ? (i+1) : 0;
+                setTimeout(function(){
+                    $jq('.basicImg').fadeOut(0);
+                    shuffle();
+                }, 3500);
+            });
+        }
+        shuffle();
+    })();
+});
+</script>
+
+
+<style>
+#basicWrap {
+  width: 100%;
+  max-height:700px;
+  overflow: hidden;
+  min-width: 1080px;
+  max-width: 2000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+#basicLeft {
+  width: 34%;
+  min-width: 365px;
+  min-height: 700px;
+  display: inline-block;
+  float: left;
+   background-color: #E4EAEA;
+    background-image: url("guys-repeat.jpg");
+    overflow: hidden;
+}
+#basicRight {
+  width: 66%;
+  min-height: 700px;
+  display: inline-block;
+  float: right;
+  background-image: url("basic-back-use.jpg");
+  background-repeat: no-repeat;
+      background-size: cover;
+  background-color: #D8CBB8;
+
+}
+.basicImg {
+  width: 100%;
+  min-width: 540px;
+  min-height: 700px;
+  display: inline-block;
+  background-image: url("basic-grey-repeat.jpg");
+  float: right;
+  display: block;
+
+}
+#basicGuysImg {
+  width: 100%;
+  min-width: 540px;
+  min-height: 700px;
+  display: inline-block;
+  background-image: url("basic-girl-use-final.jpg");
+  float: right;
+  background-position: right;
+  background-repeat: repeat-x;
+
+}
+#basicGirlsImg {
+  width: 100%;
+  min-width: 540px;
+  min-height: 700px;
+  display: inline-block;
+  background-image: url("basic-guys-use-final.jpg");
+  float: right;
+  background-position: right;
+  background-repeat: repeat-x;
+
+}
+#basicGuysImgA {    
+  margin-left: -920px;
+}
+</style>
+
+<div id="basicWrap">
+
+<div id="basicLeft" style="background-color:#E4EAEA">
+
+<div class="basicImg" id="first-basicImg">
+
+<div id="basicGirlsImg">
+<img src="basic-girl-use-final.jpg" style="float: right;" class="animated fadeInRight">
+</div>
+
+</div>
+
+<div class="basicImg" id="second-basicImg">
+
+<div id="basicGuysImg">
+<img src="basic-guys-use-final.jpg" style="float: right;" class="animated fadeInRight">
+</div>
+
+</div>
+
+</div>
+
+<div id="basicRight" style="background-color:#D8CBB8">
+
+<img src="basic-overlay-Updated.png" style="float: left;margin-top: 64px;margin-left: 15%;">
+  
+  
+</div>
+
+</div>

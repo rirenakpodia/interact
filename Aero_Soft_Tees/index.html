@@ -1,0 +1,227 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+  var $jq = jQuery.noConflict();
+ $jq(function() {
+        
+        $jq("#teeBodyText")
+        .delay(250)
+        .queue(function (next) { 
+         $jq(this).fadeOut();
+         next(); 
+         });
+
+        $jq("#teeFitWrap")
+        .delay(250)
+        .queue(function (next) { 
+         $jq(this).show();
+         next(); 
+         });
+
+        $jq(".fitSlim")
+        .delay(500)
+        .queue(function (next) { 
+         $jq(this).show();
+         next(); 
+         });
+
+        $jq(".fitRelaxed")
+        .delay(750)
+        .queue(function (next) { 
+         $jq(this).fadeIn();
+         next(); 
+         });
+
+        $jq(".fitPerfect")
+        .delay(1000)
+        .queue(function (next) { 
+         $jq(this).fadeIn();
+         next(); 
+         });
+
+         $jq(".fitEasy")
+        .delay(1250)
+        .queue(function (next) { 
+         $jq(this).fadeIn();
+         next(); 
+         });
+
+          $jq("#fitBaby")
+        .delay(150)
+        .queue(function (next) { 
+         $jq(this).fadeIn();
+         next(); 
+         });
+
+        $jq("#fitBaby").mouseenter(function () {
+          $jq("#fitBaby img").hide();
+
+        });
+
+        $jq("#fitBaby").mouseleave(function () {
+          $jq("#fitBaby img").show();
+
+        });
+
+       
+      });
+
+</script>
+
+<style type="text/css">
+#teeBody {
+	width: 910px;
+	height: 580px;
+	background-image: url("soft-tee-back-img.jpg");
+	position: relative;
+}
+#teeBodyText {
+    width: 513px;
+    height: 338px;
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    display: block;
+}
+#teeFitWrap {
+    width: 650px;
+    height: 520px;
+    position: absolute;
+    top: 29px;
+    left: 40px;
+    display: none;
+}
+#teeFitWrap img {
+	opacity: 1;
+}
+
+#teeFitWrap img:hover {
+	opacity: .7;
+
+}
+
+.fitSlim {
+    width: 250px;
+    height: 250px;
+    display: none;
+    float: left;
+    margin-right: 18px;
+    margin-bottom: 18px;
+    position: relative;
+    background-color: #fff; 
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+}
+
+
+.fitRelaxed {
+	width: 250px;
+	height: 250px;
+	display: none;
+	float: left;
+	margin-bottom: 18px;
+    position: relative;
+    background-color: #fff; 
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+}
+
+.fitPerfect {
+	width: 250px;
+	height: 250px;
+	display: none;
+	float: left;
+	position: relative;
+	margin-right: 18px;
+	background-color: #fff; 
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+}
+
+
+.fitEasy {
+	width: 250px;
+	height: 250px;
+	display: none;
+	float: left;
+	position: relative;
+	background-color: #fff; 
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.12);
+}
+
+#fitBaby {
+    width: 332px;
+    height: 400px;
+    position: absolute;
+    top: 92px;
+    left: 570px;
+    display: none;
+    background-image: url("baby-tees-white.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+</style>
+
+<div id="teeBody">
+
+<div id="teeBodyText">
+
+<img src="seriously-soft-tee.png">
+
+</div>
+
+<div id="teeFitWrap">
+
+<!-- SLIM FIT -->
+
+<div class="fitSlim">
+
+<img src="slim-tees.png">
+	
+</div>
+
+
+<!-- RELAXED FIT -->
+
+<div class="fitRelaxed">
+
+<img src="relaxed-tees.png">
+	
+</div>
+
+<!-- PERFECT FIT -->
+
+<div class="fitPerfect">
+
+<img src="perfect-tee.png">
+	
+</div>
+
+<!-- EASY FIT -->
+
+<div class="fitEasy">
+
+<img src="easy-tees.png">
+	
+</div>
+
+	
+
+</div>	
+
+<!-- BABy FIT -->
+
+<div id="fitBaby">
+
+<img src="baby-tees.png" style="display: inline;position: relative;top: 0px;left: 215px;">
+	
+</div>
+
+
+</div>

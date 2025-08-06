@@ -1,0 +1,118 @@
+a031813_slides
+/*
+	Page style
+*/
+
+#a031813_container {
+	width:790px;
+	padding:0;
+	margin:0 auto;
+	z-index:0;
+}
+
+#a031813_example {
+	width:790px;
+	height:485px;
+}
+
+
+#a031813_frame {
+	position:absolute;
+	z-index:0;
+	width:790px;
+	height:473px;
+	top:-3px;
+	left:-80px;
+}
+
+/*
+	Slideshow
+*/
+
+#a031813_slides {
+	position:absolute;
+	top:15px;
+		height:483px;
+	left:0;
+	z-index:100;
+}
+
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+.a031813_slides_container {
+	width:790px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.a031813_slides_container a {
+	width:790px;
+	height:483px;
+	display:block;
+}
+
+.a031813_slides_container a img {
+	display:block;
+}
+
+/*
+	Next/prev buttons
+*/
+
+#a031813_slides .next,#a031813_slides .prev {
+	position:absolute;
+	top:0;
+	left:0;
+	width:40px;
+	height:62px;
+	display:block;
+	z-index:101;
+}
+
+#a031813_slides .next {
+	left:770px;
+}
+
+/*
+	Pagination
+*/
+
+.a031813_pagination {
+	margin:26px auto 0;
+	width:100px;
+}
+
+.a031813_pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+.a031813_pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.a031813_pagination li.current a {
+	background-position:0 -12px;
+}
+
