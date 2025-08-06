@@ -1,0 +1,52 @@
+#slider-content{
+  position : absolute;
+  left : 0px;
+}
+#splash{
+  position : absolute;
+  left : 0px;
+  top : 0px;;
+  z-index : 100; 
+}
+.slide{
+  position: absolute;
+  width : 9576px;
+  height : 475px;
+  overflow : hidden;
+}
+#a{
+  left : -9576px;
+}
+#b{
+  left : 0px;
+}
+#c{
+  left : 9576px;
+}
+#page{
+  position : absolute;
+  left : 0px;
+  top : 0px;
+  width : 795px;
+  height :  475px;
+  overflow : hidden;
+}
+#title{
+  position : absolute;
+  left : 145px;
+  top : 211px;
+  z-index : 100; 
+  cursor : pointer;
+}
+#arrow-left{
+  position : absolute;
+  left : 5px;
+  top : 205px; 
+  cursor : pointer;
+}
+#arrow-right{
+  position : absolute;
+  left : 761px;
+  top : 205px; 
+  cursor : pointer;
+}

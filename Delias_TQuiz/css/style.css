@@ -1,0 +1,106 @@
+*{
+  margin : 0px;
+  padding : 0px; 
+}
+#page{
+  position : relative;
+  width : 800px;
+  height : 636px;
+  overflow : hidden;
+  border : 1px solid #ccc; 
+  display : none;
+}
+#main{
+  position : absolute;
+  left : 0px;
+  top : 0px; 
+}
+#bg{
+  postion : absolute;
+  left : 0px;
+  top : 0px; 
+}
+.q{
+  font-family : "AvenirUltraLight", sans-serif;
+  position : absolute;
+  left : 65px;
+  
+  font-size : 22px;
+  top : 250px; 
+}
+.q p{
+  width : 296px; 
+  margin-bottom : 20px;
+}
+#go{
+  cursor : pointer;
+}
+.check{
+  position : relative; 
+  height : 40px;
+  cursor : pointer;
+}
+.box{
+  position : absolute;
+  left : 0px;
+  top : 0px; 
+}
+.heart{
+  position : absolute;
+  left : -3px;
+  top : 5px; 
+  display : none;
+}
+.check p{
+  margin-left : 30px;
+  margin-bottom : 0px;
+}
+.next{
+  margin-top : 10px; 
+  cursor : pointer;
+}
+#result{
+  position : absolute;
+  left : 0px;
+  top : 0px;
+  display : none; 
+}
+.count{
+  position : absolute;
+  left : 0px;
+  top : 300px; 
+}
+#social{
+  position : absolute;
+  width : 500px;
+  height : 50px;
+  
+  left : 140px;
+  top : 570px;
+}
+#social img{
+  float : left; 
+  margin-right : 20px;
+}
+.bg{
+  position : absolute;
+  left : 0px;
+  top : 0px;
+  
+}
+.shop{
+  position : absolute ;
+  left : 0px;
+  top : 0px; 
+}
+.shop-btn{
+  position : absolute;
+}
+#shop-pop{
+  position : absolute;
+  left : 0px;
+  top : 0px; 
+}
+.stat{
+  display : none; 
+}
