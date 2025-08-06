@@ -1,0 +1,130 @@
+ body {
+  margin: 0;
+  padding: 0;
+ }
+ 
+ #background{
+ position : absolute;
+ width : 798px;
+ height : 611px;
+ overflow : hidden; 
+}
+ #dress1
+{ 
+   left: 21px; 
+   top: 201px; 
+   position: absolute; 
+   width: 353px;
+   height: 381px;
+   z-index:2;
+} 
+
+ #stars1
+{ 
+   left: 18px; 
+   top: 139px; 
+   position: absolute; 
+   width: 352px;
+   height: 493px;
+   z-index:3;
+} 
+
+ #layer_19 
+{ 
+   left: 391px; 
+   top: 390px; 
+   position: absolute; 
+   width: 133px;
+   height: 194px;
+   z-index:4;
+} 
+
+ #layer_18 
+{ 
+   left: 499px; 
+   top: 409px; 
+   position: absolute; 
+   width: 141px;
+   height: 201px;
+   z-index:5;
+} 
+
+ #layer_17 
+{ 
+   left: 650px; 
+   top: 412px; 
+   position: absolute; 
+   width: 127px;
+   height: 192px;
+   z-index:6;
+} 
+
+ #layer_16 
+{ 
+   left: 369px; 
+   top: 210px; 
+   position: absolute; 
+   width: 129px;
+   height: 191px;
+   z-index:7;
+} 
+
+ #layer_15 
+{ 
+   left: 515px; 
+   top: 219px; 
+   position: absolute; 
+   width: 134px;
+   height: 196px;
+   z-index:8;
+} 
+
+ #layer_14 
+{ 
+   left: 642px; 
+   top: 205px; 
+   position: absolute; 
+   width: 133px;
+   height: 194px;
+   z-index:9;
+} 
+
+ #layer_13 
+{ 
+   left: 385px; 
+   top: 12px; 
+   position: absolute; 
+   width: 124px;
+   height: 187px;
+   z-index:10;
+} 
+
+ #layer_12 
+{ 
+   left: 504px; 
+   top: 22px; 
+   position: absolute; 
+   width: 136px;
+   height: 197px;
+   z-index:11;
+} 
+
+ #layer_11 
+{ 
+   left: 648px; 
+   top: 13px; 
+   position: absolute; 
+   width: 132px;
+   height: 193px;
+   z-index:12;
+} 
+
+ #ROYALBLUES 
+{ 
+   left: 86px; 
+   top: 28px; 
+   position: absolute; 
+   width: 205px;
+   height: 62px;
+   z-index:13;
+} 

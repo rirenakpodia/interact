@@ -1,0 +1,785 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+        $('#GirlShorts').hide();
+      });
+      $(window).load(function(){
+        
+        var slides = [$('#splash'), $('#splashA'),];
+        
+        $(slides).each(function() {
+          $(this).hide();
+        });
+        
+        function checkHideShowNav() {
+        }
+        var idx = 0;
+        var curr = slides[idx];
+        var next;
+        var moving = false;
+        
+        slides[idx].show();
+        
+        function leftOut(el) {
+          el.css({left: 0})
+            .animate({left: -1080});
+        }
+        
+        function leftIn(el) {
+          el.css({left: -1080})
+            .animate({left: 0});
+          el.show();
+        }
+        
+        function rightOut(el) {
+          el.css({left: 0})
+            .animate({left: 1080});
+        }
+        
+        function rightIn(el) {
+          
+          el.css({left: 1080})
+            .animate({left: 0});
+          
+          el.show();
+        }
+        
+        function goRight() {
+         if (moving) return;
+         moving = true;
+         idx++;
+         if (idx > slides.length - 1) {
+          idx = 0; 
+         }
+         
+         checkHideShowNav();
+       
+         next = slides[idx];
+         leftOut(curr);
+         rightIn(next);
+         curr = next;
+         next = null;
+          
+          var x = $('.pbtn[data-idx='+idx+']').trigger('mouseover');
+         console.log(x);
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+        
+        var auto = setInterval(goRight, 2500);
+        
+        var ii = 0;
+        $(document).on('mousedown mousemove', function() {
+          if (ii > 20) {
+            clearInterval(auto);
+            // console.log('clear');
+          }
+          ii++;
+        });
+       
+       function goLeft() {
+         if (moving) return;
+         moving = true;
+         idx--;
+         if (idx < 0) {
+          idx = slides.length - 1; 
+         }
+         
+         checkHideShowNav();
+         
+         // console.log(idx);
+         next = slides[idx];
+         rightOut(curr);
+         leftIn(next);
+         curr = next;
+         next = null;
+          var x = $('.pbtn[data-idx='+idx+']').trigger('mouseover');
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+       
+       function jump(id) {
+         if (id === idx) return;
+         idx = id;
+         if (moving) return;
+         moving = true;
+         
+         checkHideShowNav();
+         
+         next = slides[idx];
+         leftOut(curr);
+         rightIn(next);
+         curr = next;
+         next = null;
+         
+         
+         
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+        
+       var right=$('#right-p'), left=$('#left-p');
+       
+       right.click(function() {
+         goRight();
+       }).css('opacity', 0.8)
+         .hover(function() {
+           $(this).animate({
+             opacity: 1 
+           }, 200);
+         }, function() {
+           $(this).animate({
+             opacity: 0.8
+           }, 200);
+         });
+       
+       left.click(function() {
+         goLeft();
+       }).css('opacity', 0.8)
+         .hover(function() {
+           $(this).animate({
+             opacity: 1 
+           }, 200);
+         }, function() {
+           $(this).animate({
+             opacity: 0.8
+           }, 200);
+         });
+        
+        $('.tpbtn').fadeOut(0);
+        
+        $('.pbtn').click(function() {
+          var curr = $(this);
+          var idx = curr.attr('data-idx');
+        
+          jump(idx);
+        }).each(function(i) {
+          $(this).css({
+            left: i * 155
+          });
+        }).hover(function() {
+          var curr = $(this);
+          var idx = curr.attr('data-idx');
+          var el = $('.tpbtn[data-idx='+idx+']');
+          el.siblings('.tpbtn').stop().fadeOut(200);
+          el.stop().fadeIn(200);
+        }, function() {
+          
+           var curr = $(this);
+          
+          if (curr.attr('data-idx') != idx) {
+          var id = curr.attr('data-idx');
+          var el = $('.tpbtn[data-idx='+id+']');
+           el.stop().fadeOut(200);
+            }
+        });
+        
+        
+        $('#GirlShorts').show();
+
+        $("#teeTank").mouseenter(function(){
+        $(".ctaBlock").fadeIn();
+        });
+        $("#teeTank").mouseleave(function(){
+        $(".ctaBlock").fadeOut();
+        });
+
+        $("#guyShort").mouseenter(function(){
+        $(".ctaBlockA").fadeIn();
+        });
+        $("#guyShort").mouseleave(function(){
+        $(".ctaBlockA").fadeOut();
+        });
+
+        $("#swim").mouseenter(function(){
+        $(".ctaBlockB").fadeIn();
+        });
+        $("#swim").mouseleave(function(){
+        $(".ctaBlockB").fadeOut();
+        });
+
+        $("#borrowed").mouseenter(function(){
+        $(".ctaBlockC").fadeIn();
+        });
+        $("#borrowed").mouseleave(function(){
+        $(".ctaBlockC").fadeOut();
+        });
+
+        $("#scene").mouseenter(function(){
+        $(".ctaBlockD").fadeIn();
+        });
+        $("#scene").mouseleave(function(){
+        $(".ctaBlockD").fadeOut();
+        });
+
+        $("#inAero").mouseenter(function(){
+        $(".ctaBlockE").fadeIn();
+        });
+        $("#inAero").mouseleave(function(){
+        $(".ctaBlockE").fadeOut();
+        });
+
+      });
+    </script>
+    <style>
+#hpCarousel {
+    position: relative;
+    width: 1080px;
+    height: 600px;
+    background-color: #e1e1e1;
+    margin-right: auto;
+    margin-left: auto;
+}
+#hpCarousel a{
+text-decoration: none;
+}
+
+#splash {
+    width: 1080px;
+    position: absolute;
+    height: 500px;
+     background-image: url("022615.AERO.BETHANY.FCSM.SPRING.CAP.FNL_01.jpg");
+  }
+#main-slider {
+    height: 600px;
+    background-color: #fff;
+    overflow: hidden;
+    width: 1080px;
+    position: relative;
+}
+      .aslide {
+        left: 0;
+        top: 0; 
+        width: 1080px;
+        height: 500px;
+      }
+      
+      #right-p {
+    cursor: pointer;
+    opacity: 0.8;
+    position: absolute;
+    top: 240px;
+    left: 1090px;
+    z-index: 10;
+}
+   #left-p {
+    cursor: pointer;
+    opacity: 0.8;
+    position: absolute;
+    top: 240px;
+    left: -60px;
+    z-index: 10;
+}
+      
+      .showShort {
+        display: none;
+      }
+#splashA {
+    width: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 500px;
+    background-image: url("022615.AERO.BETHANY.FCSM.SPRING.CAP.FNL_02.jpg");
+  }
+#splashB {
+    width: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 500px;
+    overflow: hidden;
+    background-image: url("022615.AERO.BETHANY.FCSM.SPRING.CAP.FNL_03.jpg");
+  }
+
+  
+      .pbtn {
+        position: absolute; 
+        top: 500px;
+        width: 155px;
+        height: 54px;
+     
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.0);
+        background: transparent;
+        cursor: pointer;
+      }
+      #allbtns {
+        left: -7px; 
+      }
+      #teeTank {
+        width: 330px;
+        height: 480px;
+        float: left;
+        display: block;
+      }
+/*      #teeTank h3 {
+        font-size: 24px;
+        color: #000;
+        font-family: Gotham-Bold,Helvetica,Arial,sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }*/
+      #guyShort {
+      width: 330px;
+      height: 480px;
+      float: left;
+      display: block;
+      margin-right: 45px;
+      margin-left: 45px;
+     }
+        #swim {
+        width: 330px;
+        height: 480px;
+        float: left;
+        display: block;
+      }
+      .cats {
+        font-size: 24px;
+        color: #000;
+        font-family: Gotham-Bold,Helvetica,Arial,sans-serif;
+        font-weight: 700;
+        letter-spacing: 0px;
+        line-height: 0;
+      }
+      .starting {
+        font-size: 14px;
+        color: #999;
+        font-family: Gotham-Light,Helvetica,Arial,sans-serif;
+        font-weight: 300;
+        letter-spacing: 0px;
+        line-height: 0;
+      }
+      .price {
+    font-size: 34px;
+    color: #000;
+    font-family: Gotham-Book,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    letter-spacing: 0px;
+    line-height: 1;
+    padding: 0px;
+    margin: 0px;
+}
+.copy {
+    font-size: 14px;
+    color: #999;
+    font-family: Gotham-Light,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    letter-spacing: 0px;
+    line-height: 1.3;
+    width: 300px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+ #borrowed {
+        width: 330px;
+        height: 480px;
+        float: left;
+        display: block;
+      }
+
+      #scene {
+      width: 330px;
+      height: 480px;
+      float: left;
+      display: block;
+      margin-right: 45px;
+      margin-left: 45px;
+     }
+        #inAero {
+        width: 330px;
+        height: 480px;
+        float: left;
+        display: block;
+      }
+          .sectHeader {
+        font-size: 24px;
+    color: #000;
+    font-family: Gotham-Book,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    width: 1050px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+      }
+     .ctaBlock {
+    width: 330px;
+    height: 400px;
+    margin-bottom-bottom: 100px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.60);
+    display: none;
+}
+     .ctaBlockA {
+    width: 330px;
+    height: 400px;
+    margin-bottom-bottom: 100px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.60);
+    display: none;
+}
+     .ctaBlockB {
+    width: 330px;
+    height: 400px;
+    margin-bottom-bottom: 100px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.60);
+    display: none;
+}
+     .ctaBlockC {
+    width: 330px;
+    height: 400px;
+    margin-bottom-bottom: 100px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.60);
+    display: none;
+}
+     .ctaBlockD {
+    width: 330px;
+    height: 400px;
+    margin-bottom-bottom: 100px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.60);
+    display: none;
+}
+     .ctaBlockE {
+    width: 330px;
+    height: 400px;
+    margin-bottom-bottom: 100px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.60);
+    display: none;
+}
+.girlsButton {
+    width: 238px;
+    margin-right: 45px;
+    margin-left: 45px;
+    height: 48px;
+    font-size: 14px;
+    color: #fff;
+    font-family: Gotham-Bold,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    background-color: #000;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 10px;
+    margin-top: 265px;
+    border: solid 1px #000;
+}
+.girlsButton:hover {
+    color: #000;
+    background-color: #fff;
+    border: solid 1px #000;
+}
+.guysButton {
+  width: 238px;
+  margin-right: 45px;
+  margin-left: 45px;
+  height: 48px;
+    font-size: 14px;
+    color: #fff;
+    font-family: Gotham-Bold,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    line-height: 50px;
+    background-color: #000;
+    text-align: center;
+    border: solid 1px #000;
+}
+.guysButton:hover {
+    color: #000;
+    background-color: #fff;
+    border: solid 1px #000;
+}
+
+.guysButtonA {
+  width: 238px;
+  margin-right: 45px;
+  margin-left: 45px;
+  height: 48px;
+    font-size: 14px;
+    color: #fff;
+    font-family: Gotham-Bold,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    line-height: 50px;
+    background-color: #000;
+    text-align: center;
+    border: solid 1px #000;
+    margin-top: 265px;
+}
+.guysButtonA:hover {
+    color: #000;
+    background-color: #fff;
+    border: solid 1px #000;
+}
+.girlsButtonA {
+  width: 238px;
+  margin-right: 45px;
+  margin-left: 45px;
+  height: 48px;
+    font-size: 14px;
+    color: #fff;
+    font-family: Gotham-Bold,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    line-height: 50px;
+    background-color: #000;
+    text-align: center;
+    border: solid 1px #000;
+}
+.girlsButtonA:hover {
+    color: #000;
+    background-color: #fff;
+    border: solid 1px #000;
+}
+.girlsButtonB {
+  width: 238px;
+  margin-right: 45px;
+  margin-left: 45px;
+  height: 48px;
+    font-size: 14px;
+    color: #fff;
+    font-family: Gotham-Bold,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    line-height: 50px;
+    background-color: #000;
+    text-align: center;
+    border: solid 1px #000;
+    margin-top: 265px;
+}
+.girlsButtonB:hover {
+    color: #000;
+    background-color: #fff;
+    border: solid 1px #000;
+}
+@media only screen and (max-width: 1220px) {
+        #right-p {
+    left: 1030px;
+}
+   #left-p {
+    left: 0px;
+}
+
+  }
+    </style>
+  </head>
+  <body>
+    
+    <div id="hpCarousel" style="display: block;">
+      <img src="022615.AERO.BETHANY.FCSM.SPRING.CAP.FNL_01.png" style="position: absolute;z-index: 1;top: -61px;">
+    
+      <div id="main-slider">
+      
+        <div class="aslide" id="splash" style="display: block;">
+          <div id="splash">
+
+          <!-- SECTION A HEADER -->
+
+          <h2 class="sectHeader" align="center">
+          OUR BEST PRICES  
+          </h2>
+
+           <!-- TEE TANK -->
+            
+          <div id="teeTank">
+
+          <div class="ctaBlock">
+
+          <a href="#">  
+          <div class="girlsButton">  
+          SHOP GIRLS
+          </div>
+          </a>
+          
+          <a href="#">  
+          <div class="guysButton">  
+          SHOP GUYS
+          </div>
+          </a>
+
+          </div>
+          
+          <img src="tees-and-tanks.jpg">  
+
+          <h3 class="cats" align="center">
+          TEES + TANKS
+          </h3>
+
+          <p class="starting" align="center">
+          STARTING AT
+          </p>
+
+          <p class="price"align="center">
+          <sup style="font-size: 16px">$</sup>X
+          </p>
+
+
+          </div>
+
+
+          <!-- GUY SHORTS -->
+
+           <div id="guyShort">
+
+           <div class="ctaBlockA">
+           <a href="#"> 
+           <div class="guysButtonA">  
+          SHOP GUYS
+          </div>
+          </a>
+
+      <!--     <a href="#"> 
+           <div class="girlsButtonA">  
+          SHOP GIRLS
+          </div>
+          </a> -->
+
+           </div>
+
+            <img src="guys-shorts.jpg">
+
+             <h3 class="cats" align="center">
+          GUY SHORTS
+          </h3>
+
+          <p class="starting" align="center">
+          STARTING AT
+          </p>
+
+          <p class="price"align="center">
+          <sup style="font-size: 16px">$</sup>X
+          </p>
+            
+          </div>
+
+          <!-- SWIM -->
+
+           <div id="swim">
+
+           <div class="ctaBlockB">
+
+           <a href="#"> 
+           <div class="girlsButtonB">  
+          SHOP GIRLS
+          </div>
+          </a>
+
+          <!--     <a href="#"> 
+           <div class="guysButton">  
+          SHOP GUYS
+          </div>
+          </a> -->
+
+
+           </div>
+            <img src="swim.jpg">
+
+             <h2 class="cats" align="center">
+          SWIM
+          </h2>
+
+          <p class="starting" align="center">
+          STARTING AT
+          </p>
+
+          <p class="price"align="center">
+          <sup style="font-size: 16px">$</sup>X
+          </p>
+            
+          </div>
+
+
+         
+          </div>
+        </div>
+
+
+<!-- SLIDE 2 -->
+
+         <div class="aslide" id="splashA" style="display: none;">
+
+
+          <div id="splashA">
+
+          <!-- SECTION 2 HEADER -->
+
+          <h2 class="sectHeader" align="center">
+          OTHER WAYS TO SHOP  
+          </h2>
+
+           <!-- BORROWED -->
+            
+           <a href="#">
+            
+          <div id="borrowed">
+
+          <div class="ctaBlockC">
+          </div>
+          
+          <img src="borrowed-from-boys.jpg">  
+
+        <p class="copy" align="center">
+          WHAT’S BETTER THAN STEALING.  HIS FAVORITE HOODIE? CLAIMING IT FOR YOURSELF.
+          </p>
+
+
+          </div>
+          </a>
+
+          <!-- SCENE -->
+
+          <a href="#">
+
+           <div id="scene">
+
+           <div class="ctaBlockD">
+          </div>
+
+            <img src="scene-stealers.jpg">
+
+        <p class="copy" align="center">
+          OUR NEWEST SPRING STYLES, FRESH OUT OF THE DESIGN STUDIO AND OUT IN THE WORLD.
+          </p>
+          </div>
+
+          </a>
+
+          <!-- IN AERO -->
+
+          <a href="#">
+
+           <div id="inAero">
+
+           <div class="ctaBlockE">
+          </div>
+
+            <img src="in-aero.jpg">
+
+
+          <p class="copy" align="center">
+          WEAR IT. SHARE IT. SHOP OUR INSTAGRAM FAVES!
+          </p>
+          </div>
+         </a>
+
+
+          </div>
+          
+        </div>
+
+        
+      </div>
+      <div id="left-p" style="opacity: 0.8;"><img src="left-arrow.png"></div>
+      <div id="right-p" style="opacity: 0.8;"><img src="right-arrow.png"></div>
+    </div>
+
+   
+  
+</body></html>
