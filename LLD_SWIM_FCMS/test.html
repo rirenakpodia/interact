@@ -1,0 +1,551 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+var $jq = jQuery.noConflict();
+
+$jq(document).ready(function() {
+var clicked=true;
+$jq(".one").on('click', function(){
+    if(clicked)
+    {
+        clicked=false;
+        $jq(".two").css({"top": "760px"});
+    }
+    else
+    {
+        clicked=true;
+        $jq(".two").css({"top": "52px"});
+    }
+});
+
+
+$jq("#swimDown").click(function() { 
+
+	$jq("#toggleSwim").toggle();
+	
+
+});
+
+
+});
+
+
+
+</script>
+
+    <script>
+
+    var $jq = jQuery.noConflict();
+
+      $jq(function() {
+        $jq('#GuyShorts').hide();
+
+        $jq('#swimSlides')
+        .delay(1000)
+        .queue(function (next) { 
+         $jq(this).css({"top": 52});
+         next(); 
+         });
+
+        // $jq('#swimSlides').delay(2500).css({"top": 52});
+        $jq("#toggleSwim").toggle();
+
+      });
+      $jq(window).load(function(){
+        
+        var slides = [ $jq('#splashA'), $jq('#splashB'),$jq('#splash'),];
+        
+        $jq(slides).each(function() {
+          $jq(this).hide();
+        });
+        
+        function checkHideShowNav() {
+        }
+        var idx = 0;
+        var curr = slides[idx];
+        var next;
+        var moving = false;
+        
+        slides[idx].show();
+        
+        function leftOut(el) {
+          el.css({left: 0})
+            .animate({left: -812});
+        }
+        
+        function leftIn(el) {
+          el.css({left: -812})
+            .animate({left: 0});
+          el.show();
+        }
+        
+        function rightOut(el) {
+          el.css({left: 0})
+            .animate({left: 812});
+        }
+        
+        function rightIn(el) {
+          
+          el.css({left: 812})
+            .animate({left: 0});
+          
+          el.show();
+        }
+        
+        function goRight() {
+         if (moving) return;
+         moving = true;
+         idx++;
+         if (idx > slides.length - 1) {
+          idx = 0; 
+         }
+         
+         checkHideShowNav();
+       
+         next = slides[idx];
+         leftOut(curr);
+         rightIn(next);
+         curr = next;
+         next = null;
+          
+          var x = $jq('.pbtn[data-idx='+idx+']').trigger('mouseover');
+         console.log(x);
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+        
+        var auto = setInterval(goRight, 4000);
+        
+        var ii = 0;
+        $jq(document).on('mousedown mousemove', function() {
+          if (ii > 20) {
+            clearInterval(auto);
+            // console.log('clear');
+          }
+          ii++;
+        });
+       
+       function goLeft() {
+         if (moving) return;
+         moving = true;
+         idx--;
+         if (idx < 0) {
+          idx = slides.length - 1; 
+         }
+         
+         checkHideShowNav();
+         
+         // console.log(idx);
+         next = slides[idx];
+         rightOut(curr);
+         leftIn(next);
+         curr = next;
+         next = null;
+          var x = $jq('.pbtn[data-idx='+idx+']').trigger('mouseover');
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+       
+       function jump(id) {
+         if (id === idx) return;
+         idx = id;
+         if (moving) return;
+         moving = true;
+         
+         checkHideShowNav();
+         
+         next = slides[idx];
+         leftOut(curr);
+         rightIn(next);
+         curr = next;
+         next = null;
+         
+         
+         
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+        
+       var right=$jq('#right-p'), left=$jq('#left-p');
+       
+       right.click(function() {
+         goRight();
+       }).css('opacity', 0.8)
+         .hover(function() {
+           $jq(this).animate({
+             opacity: 1 
+           }, 200);
+         }, function() {
+           $jq(this).animate({
+             opacity: 0.8
+           }, 200);
+         });
+       
+       left.click(function() {
+         goLeft();
+       }).css('opacity', 0.8)
+         .hover(function() {
+           $jq(this).animate({
+             opacity: 1 
+           }, 200);
+         }, function() {
+           $jq(this).animate({
+             opacity: 0.8
+           }, 200);
+         });
+        
+        $jq('.tpbtn').fadeOut(0);
+        
+        $jq('.pbtn').click(function() {
+          var curr = $(this);
+          var idx = curr.attr('data-idx');
+        
+          jump(idx);
+        }).each(function(i) {
+          $jq(this).css({
+            left: i * 155
+          });
+        }).hover(function() {
+          var curr = $jq(this);
+          var idx = curr.attr('data-idx');
+          var el = $jq('.tpbtn[data-idx='+idx+']');
+          el.siblings('.tpbtn').stop().fadeOut(200);
+          el.stop().fadeIn(200);
+        }, function() {
+          
+           var curr = $jq(this);
+          
+          if (curr.attr('data-idx') != idx) {
+          var id = curr.attr('data-idx');
+          var el = $jq('.tpbtn[data-idx='+id+']');
+           el.stop().fadeOut(200);
+            }
+        });
+        
+        
+        $jq('#GuyShorts').show();
+
+        
+
+      });
+
+
+
+$jq('#swimA').click(function() { $jq("[data-product-id|='78220436'] .details .details-image .quick-view").click(); });
+$jq('#swimB').click(function() { $jq("[data-product-id|='78984876'] .details .details-image .quick-view").click(); });
+$jq('#swimC').click(function() { $jq("[data-product-id|='77034276'] .details .details-image .quick-view").click(); });
+$jq('#swimD').click(function() { $jq("[data-product-id|='77034336'] .details .details-image .quick-view").click(); });
+$jq('#swimE').click(function() { $jq("[data-product-id|='77034076'] .details .details-image .quick-view").click(); });
+$jq('#swimF').click(function() { $jq("[data-product-id|='77033926'] .details .details-image .quick-view").click(); });
+$jq('#swimG').click(function() { $jq("[data-product-id|='78220476'] .details .details-image .quick-view").click(); });
+$jq('#swimH').click(function() { $jq("[data-product-id|='77034226'] .details .details-image .quick-view").click(); });
+$jq('#swimI').click(function() { $jq("[data-product-id|='77033936'] .details .details-image .quick-view").click(); });
+$jq('#swimJ').click(function() { $jq("[data-product-id|='77033876'] .details .details-image .quick-view").click(); });
+$jq('#swimK').click(function() { $jq("[data-product-id|='77034336'] .details .details-image .quick-view").click(); });
+$jq('#swimL').click(function() { $jq("[data-product-id|='77034226'] .details .details-image .quick-view").click(); });
+
+    </script>
+
+
+<style type="text/css">
+
+.one {
+    position: relative;
+    top: 0;
+    z-index: 1;
+    cursor:pointer;
+}
+.two {
+    position: relative;
+    top: -40px;
+    background-color: yellow;
+    z-index: -1;
+    -webkit-transition: top 1s;
+    -moz-transition: top 1s;
+    -o-transition: top 1s;
+    transition: top 1s;
+}
+/*.one:hover + .two {
+    top: 0px;
+}*/
+#lldSwim {
+	width: 911px;
+	height: 755px;
+	background-image: url("lld-swim-background.jpg");
+	overflow: hidden;
+}
+#swimDown {
+	height: 70px;
+	width: 911px;
+	background-image: url("lld-up-arrow-one.png");
+	margin-top: -28px;
+	z-index: 10;
+	position: relative;
+}	
+#toggleSwim  {
+	display: none;
+	height: 70px;
+	width: 911px;
+
+}
+#swimSlides {
+	width: 812px;
+	height: 651px;
+	background-image: url("lld-swim-overlay.jpg");
+	position: relative; 
+	top: 756px;
+	left: 49px;
+	z-index: 1;
+
+}
+#swimSlidesA {
+	width: 812px;
+	height: 651px;
+	background-image: url("lld-swim-overlay.jpg");
+	position: relative; 
+	top: 52px;
+	left: 49px;
+	z-index: 1;
+
+}
+
+#shortTitle {
+  float: left;
+  width: 116px;
+  height: 468px;
+}
+#splash {
+    width: 812px;
+    height: 651px;
+    position: absolute;
+    overflow: hidden;
+    background-image: url("lld-swim-ncta-C2.jpg");
+  }
+#main-slider {
+    height: 651px;
+    background-color: transparent;
+    overflow: hidden;
+    width: 812px;
+    position: relative;
+}
+      .aslide {
+        left: 0;
+        top: 0; 
+        width: 754px;
+        height: 468px;
+      }
+      #right-p {
+        cursor: pointer;
+    opacity: 0.8;
+    position: absolute;
+     top: 297px;
+    left: 783px;
+}
+
+    #left-p {
+    cursor: pointer;
+    opacity: 0.8;
+    position: absolute;
+    top: 297px;
+    left: 0px;
+}
+     
+      
+      .showShort {
+        display: none;
+      }
+#splashA {
+    width: 812px;
+    height: 651px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url("lld-swim-ncta-B-3-18-Use.jpg");
+        background-position: -812px;
+    overflow: hidden;
+  }
+  #splashB {
+    width: 812px;
+    height: 651px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url("lld-swim-ncta-C-3-18-Use.jpg");
+        background-position: -1624px;
+    overflow: hidden;
+  }
+
+
+      .pbtn {
+        position: absolute; 
+        top: 500px;
+        width: 155px;
+        height: 54px;
+     
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.0);
+        background: transparent;
+        cursor: pointer;
+      }
+      #allbtns {
+        left: -7px; 
+      }
+      .swimButton {
+      	font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+	    font-size: 12px;
+	    text-align: center;
+	    background-color: #fff;
+	    color: #000;
+	    width: 145px;
+	    height: 39px;
+	    line-height: 38px;
+	         -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    position: absolute;
+      }
+
+      .swimButton:hover {
+      	font-family: Gotham-Medium,Helvetica,Arial,sans-serif;
+	    font-size: 12px;
+	    text-align: center;
+	    background-color: #000;
+	    color: #FFF;
+	    width: 145px;
+	    height: 39px;
+	    line-height: 38px;
+	     -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+      }
+
+</style>
+
+<div id="lldSwim">
+
+<div id="swimSlides" class="two">
+      
+   
+      <div id="main-slider">
+      
+        <div class="aslide" id="splash" style="display: block;">
+          <div id="splash">
+
+          <a href="#">	
+          <div class="swimButton" style="top: 330px;left: 172px;" id="swimA">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 330px;left: 485px;" id="swimB">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 582px;left: 172px;" id="swimC">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 582px;left: 485px;" id="swimD">
+          SHOP NOW
+          </div>
+          </a>
+
+
+          </div>
+        </div>
+        
+         <div class="aslide" id="splashA" style="display: none;">
+          <div id="splashA">
+
+          <a href="#">		
+          <div class="swimButton" style="top: 330px;left: 172px;" id="swimE">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 330px;left: 485px;" id="swimF">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 582px;left: 172px;" id="swimG">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 582px;left: 485px;" id="swimH">
+          SHOP NOW
+          </div>
+          </a>
+
+          </div>
+          
+        </div> 
+
+<div class="aslide" id="splashB" style="display: none;">
+
+          <div id="splashB">
+
+          <a href="#">	
+          <div class="swimButton" style="top: 330px;left: 172px;" id="swimI">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 330px;left: 485px;" id="swimJ">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 582px;left: 172px;" id="swimK">
+          SHOP NOW
+          </div>
+          </a>
+
+          <a href="#">	
+           <div class="swimButton" style="top: 582px;left: 485px;" id="swimL">
+          SHOP NOW
+          </div>
+          </a>
+ 
+          </div>
+          
+        </div> 
+
+        
+      </div>
+ 
+      <div id="right-p" style="opacity: 0.8;"><img src="right-arrow.png"></div>
+      <div id="left-p" style="opacity: 0.8;"><img src="left-arrow.png"></div>
+      
+    </div>
+</div>
+
+</div>
+<div id="swimDown" class="one">
+<img src="lld-bottom-arrow-use.png" id="toggleSwim">	
+
+</div>
+
+
+
+
+
+
+</body></html>
+
