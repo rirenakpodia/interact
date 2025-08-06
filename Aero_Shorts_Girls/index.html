@@ -1,0 +1,406 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+        $('#GirlShorts').hide();
+      });
+      $(window).load(function(){
+        
+        var slides = [$('#splash'), $('#splashA'),];
+        
+        $(slides).each(function() {
+          $(this).hide();
+        });
+        
+        function checkHideShowNav() {
+        }
+        var idx = 0;
+        var curr = slides[idx];
+        var next;
+        var moving = false;
+        
+        slides[idx].show();
+        
+        function leftOut(el) {
+          el.css({left: 0})
+            .animate({left: -850});
+        }
+        
+        function leftIn(el) {
+          el.css({left: -850})
+            .animate({left: 0});
+          el.show();
+        }
+        
+        function rightOut(el) {
+          el.css({left: 0})
+            .animate({left: 850});
+        }
+        
+        function rightIn(el) {
+          
+          el.css({left: 850})
+            .animate({left: 0});
+          
+          el.show();
+        }
+        
+        function goRight() {
+         if (moving) return;
+         moving = true;
+         idx++;
+         if (idx > slides.length - 1) {
+          idx = 0; 
+         }
+         
+         checkHideShowNav();
+       
+         next = slides[idx];
+         leftOut(curr);
+         rightIn(next);
+         curr = next;
+         next = null;
+          
+          var x = $('.pbtn[data-idx='+idx+']').trigger('mouseover');
+         console.log(x);
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+        
+        var auto = setInterval(goRight, 4000);
+        
+        var ii = 0;
+        $(document).on('mousedown mousemove', function() {
+          if (ii > 20) {
+            clearInterval(auto);
+            // console.log('clear');
+          }
+          ii++;
+        });
+       
+       function goLeft() {
+         if (moving) return;
+         moving = true;
+         idx--;
+         if (idx < 0) {
+          idx = slides.length - 1; 
+         }
+         
+         checkHideShowNav();
+         
+         // console.log(idx);
+         next = slides[idx];
+         rightOut(curr);
+         leftIn(next);
+         curr = next;
+         next = null;
+          var x = $('.pbtn[data-idx='+idx+']').trigger('mouseover');
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+       
+       function jump(id) {
+         if (id === idx) return;
+         idx = id;
+         if (moving) return;
+         moving = true;
+         
+         checkHideShowNav();
+         
+         next = slides[idx];
+         leftOut(curr);
+         rightIn(next);
+         curr = next;
+         next = null;
+         
+         
+         
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+        
+       var right=$('#right-p'), left=$('#left-p');
+       
+       right.click(function() {
+         goRight();
+       }).css('opacity', 0.8)
+         .hover(function() {
+           $(this).animate({
+             opacity: 1 
+           }, 200);
+         }, function() {
+           $(this).animate({
+             opacity: 0.8
+           }, 200);
+         });
+       
+       left.click(function() {
+         goLeft();
+       }).css('opacity', 0.8)
+         .hover(function() {
+           $(this).animate({
+             opacity: 1 
+           }, 200);
+         }, function() {
+           $(this).animate({
+             opacity: 0.8
+           }, 200);
+         });
+        
+        $('.tpbtn').fadeOut(0);
+        
+        $('.pbtn').click(function() {
+          var curr = $(this);
+          var idx = curr.attr('data-idx');
+        
+          jump(idx);
+        }).each(function(i) {
+          $(this).css({
+            left: i * 155
+          });
+        }).hover(function() {
+          var curr = $(this);
+          var idx = curr.attr('data-idx');
+          var el = $('.tpbtn[data-idx='+idx+']');
+          el.siblings('.tpbtn').stop().fadeOut(200);
+          el.stop().fadeIn(200);
+        }, function() {
+          
+           var curr = $(this);
+          
+          if (curr.attr('data-idx') != idx) {
+          var id = curr.attr('data-idx');
+          var el = $('.tpbtn[data-idx='+id+']');
+           el.stop().fadeOut(200);
+            }
+        });
+        
+        
+        $('#GirlShorts').show();
+
+        $("#midi").mouseenter(function(){
+        $("#midi .showShort").fadeIn();
+        });
+        $("#midi").mouseleave(function(){
+        $("#midi .showShort").fadeOut();
+        });
+
+        $("#shorty").mouseenter(function(){
+        $("#shorty .showShort").fadeIn();
+        });
+        $("#shorty").mouseleave(function(){
+        $("#shorty .showShort").fadeOut();
+        });
+
+        $("#twillMidi").mouseenter(function(){
+        $("#twillMidi .showShort").fadeIn();
+        });
+        $("#twillMidi").mouseleave(function(){
+        $("#twillMidi .showShort").fadeOut();
+        });
+
+        $("#midiA").mouseenter(function(){
+        $("#midiA .showShort").fadeIn();
+        });
+        $("#midiA").mouseleave(function(){
+        $("#midiA .showShort").fadeOut();
+        });
+
+        $("#shortyA").mouseenter(function(){
+        $("#shortyA .showShort").fadeIn();
+        });
+        $("#shortyA").mouseleave(function(){
+        $("#shortyA .showShort").fadeOut();
+        });
+
+        $("#twillMidiA").mouseenter(function(){
+        $("#twillMidiA .showShort").fadeIn();
+        });
+        $("#twillMidiA").mouseleave(function(){
+        $("#twillMidiA .showShort").fadeOut();
+        });
+
+      });
+    </script>
+    <style>
+#GirlShorts {
+    position: relative;
+    width: 864px;
+    height: 470px;
+    overflow: hidden;
+    background-color: #e1e1e1;
+    padding: 20px;
+}
+#shortTitle {
+  float: left;
+  width: 116px;
+  height: 468px;
+}
+#splash {
+    width: 817px;
+    position: absolute;
+    height: 471px;
+    overflow: hidden;
+  }
+#main-slider {
+    height: 468px;
+    background-color: #fff;
+    overflow: hidden;
+    width: 742px;
+    position: relative;
+}
+      .aslide {
+        left: 0;
+        top: 0; 
+        width: 754px;
+        height: 468px;
+      }
+      
+      #left-p, #right-p {
+        cursor: pointer;
+        opacity: 0.8;
+        position: absolute;
+        top: 225px;
+        left: 856px;
+      }
+      
+      #midi {
+        width: 243px;
+        height: 468px;
+        margin-right: 12px;
+        display: inline-block;
+        float: left;
+        background-image: url("GIRLS_SHORTS_FCMS_MIDI.jpg");
+      }
+
+       #shorty {
+        width: 243px;
+        height: 468px;
+        margin-right: 12px;
+        display: inline-block;
+        float: left;
+        background-image: url("GIRLS_SHORTS_FCMS_SHORTY.jpg");
+      }
+
+       #twillMidi {
+        width: 243px;
+        height: 468px;
+        margin-right: 0px;
+        display: inline-block;
+        float: left;
+        background-image: url("GIRLS_SHORTS_FCMS_TWILLMIDI.jpg");
+      }
+      .showShort {
+        display: none;
+      }
+#splashA {
+    width: 833px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 479px;
+    overflow: hidden;
+  }
+        #midiA {
+        width: 243px;
+        height: 468px;
+        margin-right: 12px;
+        display: inline-block;
+        float: left;
+        background-image: url("SLIDE 2/GIRLS_SHORTS_FCMS_BERMUDA.jpg");
+      }
+
+       #shortyA {
+        width: 243px;
+        height: 468px;
+        margin-right: 12px;
+        display: inline-block;
+        float: left;
+        background-image: url("SLIDE 2/GIRLS_SHORTS_FCMS_HIGHWAISTEDSHORTY.jpg");
+      }
+
+       #twillMidiA {
+        width: 243px;
+        height: 468px;
+        margin-right: 0px;
+        display: inline-block;
+        float: left;
+        background-image: url("SLIDE 2/GIRLS_SHORTS_FCMS_SERIOUSLYSTRETCHY.jpg");
+      }
+      .pbtn {
+        position: absolute; 
+        top: 500px;
+        width: 155px;
+        height: 54px;
+     
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.0);
+        background: transparent;
+        cursor: pointer;
+      }
+      #allbtns {
+        left: -7px; 
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div id="GirlShorts" style="display: block;">
+      
+    <img src="GIRLS_SHORTS_FCMS_TITLE copy.jpg" id="shortTitle">
+      <div id="main-slider">
+      
+        <div class="aslide" id="splash" style="display: block;">
+          <div id="splash">
+
+          <div id="midi">
+          <img src="GIRLS_SHORTS_FCMS_MIDI2.jpg" class="showShort">
+          </div>
+
+          <div id="shorty">
+          <img src="GIRLS_SHORTS_FCMS_SHORTY2.jpg" class="showShort"> 
+          </div>
+
+          <div id="twillMidi">
+          <img src="GIRLS_SHORTS_FCMS_TWILLMIDI2.jpg" class="showShort"> 
+          </div>
+          
+          </div>
+        </div>
+
+
+         <div class="aslide" id="splashA" style="display: none;">
+          <div id="splashA">
+          <div id="midiA">
+          <img src="SLIDE 2/GIRLS_SHORTS_FCMS_BERMUDA2.jpg" class="showShort"> 
+          </div>
+
+          <div id="shortyA">
+          <img src="SLIDE 2/GIRLS_SHORTS_FCMS_HIGHWAISTEDSHORTY2.jpg" class="showShort"> 
+          </div>
+
+          <div id="twillMidiA">
+          <img src="SLIDE 2/GIRLS_SHORTS_FCMS_SERIOUSLYSTRETCHY2.jpg" class="showShort"> 
+          </div>
+
+          </div>
+          
+        </div>
+        
+      </div>
+      <div id="right-p" style="opacity: 0.8;"><img src="NEXT_BUTTON.png"></div>
+      <div id="left-p" style="opacity: 0.8;"><img src="NEXT_BUTTON.png"></div>
+    </div>
+
+    <h3 align="center" style="width: 910px;height: 88px;font-family: Gotham-Black,Helvetica,Arial,sans-serif;text-transform: uppercase;font-size: 72px; line-height: 0px;
+    margin-top:40px;">
+
+    <span style="font-size: 26px;line-height: 28px;float: left;left: 288px;position: relative;">Starting At</span> 
+    <sup style="font-size: 38px;">$</sup>24</h3>
+  
+</body></html>

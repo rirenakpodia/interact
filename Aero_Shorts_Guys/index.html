@@ -1,0 +1,453 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+
+    var $jq = jQuery.noConflict();
+
+      $jq(function() {
+        $jq('#GuyShorts').hide();
+      });
+      $jq(window).load(function(){
+        
+        var slides = [$jq('#splash'), $jq('#splashA'),];
+        
+        $jq(slides).each(function() {
+          $jq(this).hide();
+        });
+        
+        function checkHideShowNav() {
+        }
+        var idx = 0;
+        var curr = slides[idx];
+        var next;
+        var moving = false;
+        
+        slides[idx].show();
+        
+        function leftOut(el) {
+          el.css({left: 0})
+            .animate({left: -850});
+        }
+        
+        function leftIn(el) {
+          el.css({left: -850})
+            .animate({left: 0});
+          el.show();
+        }
+        
+        function rightOut(el) {
+          el.css({left: 0})
+            .animate({left: 850});
+        }
+        
+        function rightIn(el) {
+          
+          el.css({left: 850})
+            .animate({left: 0});
+          
+          el.show();
+        }
+        
+        function goRight() {
+         if (moving) return;
+         moving = true;
+         idx++;
+         if (idx > slides.length - 1) {
+          idx = 0; 
+         }
+         
+         checkHideShowNav();
+       
+         next = slides[idx];
+         leftOut(curr);
+         rightIn(next);
+         curr = next;
+         next = null;
+          
+          var x = $jq('.pbtn[data-idx='+idx+']').trigger('mouseover');
+         console.log(x);
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+        
+        var auto = setInterval(goRight, 4000);
+        
+        var ii = 0;
+        $jq(document).on('mousedown mousemove', function() {
+          if (ii > 20) {
+            clearInterval(auto);
+            // console.log('clear');
+          }
+          ii++;
+        });
+       
+       function goLeft() {
+         if (moving) return;
+         moving = true;
+         idx--;
+         if (idx < 0) {
+          idx = slides.length - 1; 
+         }
+         
+         checkHideShowNav();
+         
+         // console.log(idx);
+         next = slides[idx];
+         rightOut(curr);
+         leftIn(next);
+         curr = next;
+         next = null;
+          var x = $jq('.pbtn[data-idx='+idx+']').trigger('mouseover');
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+       
+       function jump(id) {
+         if (id === idx) return;
+         idx = id;
+         if (moving) return;
+         moving = true;
+         
+         checkHideShowNav();
+         
+         next = slides[idx];
+         leftOut(curr);
+         rightIn(next);
+         curr = next;
+         next = null;
+         
+         
+         
+         setTimeout(function() {
+           moving = false;
+         }, 500);
+       }
+        
+       var right=$jq('#right-p'), left=$jq('#left-p');
+       
+       right.click(function() {
+         goRight();
+       }).css('opacity', 0.8)
+         .hover(function() {
+           $jq(this).animate({
+             opacity: 1 
+           }, 200);
+         }, function() {
+           $jq(this).animate({
+             opacity: 0.8
+           }, 200);
+         });
+       
+       left.click(function() {
+         goLeft();
+       }).css('opacity', 0.8)
+         .hover(function() {
+           $jq(this).animate({
+             opacity: 1 
+           }, 200);
+         }, function() {
+           $jq(this).animate({
+             opacity: 0.8
+           }, 200);
+         });
+        
+        $jq('.tpbtn').fadeOut(0);
+        
+        $jq('.pbtn').click(function() {
+          var curr = $(this);
+          var idx = curr.attr('data-idx');
+        
+          jump(idx);
+        }).each(function(i) {
+          $jq(this).css({
+            left: i * 155
+          });
+        }).hover(function() {
+          var curr = $jq(this);
+          var idx = curr.attr('data-idx');
+          var el = $jq('.tpbtn[data-idx='+idx+']');
+          el.siblings('.tpbtn').stop().fadeOut(200);
+          el.stop().fadeIn(200);
+        }, function() {
+          
+           var curr = $jq(this);
+          
+          if (curr.attr('data-idx') != idx) {
+          var id = curr.attr('data-idx');
+          var el = $jq('.tpbtn[data-idx='+id+']');
+           el.stop().fadeOut(200);
+            }
+        });
+        
+        
+        $jq('#GuyShorts').show();
+
+        $jq("#prep").mouseenter(function(){
+        $jq("#prep .showShort").fadeIn();
+        });
+        $jq("#prep").mouseleave(function(){
+        $jq("#prep .showShort").fadeOut();
+        });
+
+        $jq("#chino").mouseenter(function(){
+        $jq("#chino .showShort").fadeIn();
+        });
+        $jq("#chino").mouseleave(function(){
+        $jq("#chino .showShort").fadeOut();
+        });
+
+        $jq("#swim").mouseenter(function(){
+        $jq("#swim .showShort").fadeIn();
+        });
+        $jq("#swim").mouseleave(function(){
+        $jq("#swim .showShort").fadeOut();
+        });
+
+        $jq("#jogger").mouseenter(function(){
+        $jq("#jogger .showShort").fadeIn();
+        });
+        $jq("#jogger").mouseleave(function(){
+        $jq("#jogger .showShort").fadeOut();
+        });
+
+        $jq("#classic").mouseenter(function(){
+        $jq("#classic .showShort").fadeIn();
+        });
+        $jq("#classic").mouseleave(function(){
+        $jq("#classic .showShort").fadeOut();
+        });
+
+         $jq("#cargo").mouseenter(function(){
+        $jq("#cargo .showShort").fadeIn();
+        });
+        $jq("#cargo").mouseleave(function(){
+        $jq("#cargo .showShort").fadeOut();
+        });
+
+        $jq("#multiCargo").mouseenter(function(){
+        $jq("#multiCargo .showShort").fadeIn();
+        });
+        $jq("#multiCargo").mouseleave(function(){
+        $jq("#multiCargo .showShort").fadeOut();
+        });
+
+        $jq("#longBoard").mouseenter(function(){
+        $jq("#longBoard .showShort").fadeIn();
+        });
+        $jq("#longBoard").mouseleave(function(){
+        $jq("#longBoard .showShort").fadeOut();
+        });
+
+      });
+    </script>
+    <style>
+#GuyShorts {
+    position: relative;
+    width: 860px;
+    height: 470px;
+    overflow: hidden;
+    background-color: #e1e1e1;
+    padding: 20px;
+}
+#shortTitle {
+  float: left;
+  width: 116px;
+  height: 468px;
+}
+#splash {
+    width: 817px;
+    position: absolute;
+    height: 471px;
+    overflow: hidden;
+  }
+#main-slider {
+    height: 468px;
+    background-color: #fff;
+    overflow: hidden;
+    width: 742px;
+    position: relative;
+}
+      .aslide {
+        left: 0;
+        top: 0; 
+        width: 754px;
+        height: 468px;
+      }
+      
+      #left-p, #right-p {
+        cursor: pointer;
+        opacity: 0.8;
+        position: absolute;
+        top: 225px;
+        left: 856px;
+      }
+      
+      #prep {
+        width: 181px;
+        height: 468px;
+        margin-right: 10px;
+        display: inline-block;
+        float: left;
+        background-image: url("GUYS_SHORTS_FCMS_PREP.jpg");
+      }
+
+       #chino{
+        width: 181px;
+        height: 468px;
+        margin-right: 10px;
+        display: inline-block;
+        float: left;
+        background-image: url("GUYS_SHORTS_FCMS_CHINO.jpg");
+      }
+
+       #swim {
+        width: 181px;
+        height: 468px;
+        display: inline-block;
+        margin-right: 10px;
+        float: left;
+        background-image: url("GUYS_SHORTS_FCMS_SWIM.jpg");
+      }
+
+      #jogger {
+        width: 181px;
+        height: 468px;
+        margin-right: 0px;
+        display: inline-block;
+        float: left;
+        background-image: url("GUYS_SHORTS_FCMS_JOGGER.jpg");
+      }
+
+
+
+      
+      .showShort {
+        display: none;
+      }
+#splashA {
+    width: 833px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 479px;
+    overflow: hidden;
+  }
+        #classic {
+        width: 181px;
+        height: 468px;
+        margin-right: 10px;
+        display: inline-block;
+        float: left;
+        background-image: url("SLIDE-2/GUYS_SHORTS_FCMS_CLASSIC.jpg");
+      }
+
+       #cargo {
+        width: 181px;
+        height: 468px;
+        margin-right: 10px;
+        display: inline-block;
+        float: left;
+        background-image: url("SLIDE-2/GUYS_SHORTS_FCMS_CLASSICCARGO.jpg");
+      }
+       #multiCargo {
+        width: 181px;
+        height: 468px;
+        margin-right: 10px;
+        display: inline-block;
+        float: left;
+        background-image: url("SLIDE-2/GUYS_SHORTS_FCMS_MULTIPOCKETCARGO.jpg");
+      }
+
+       #longBoard {
+        width: 181px;
+        height: 468px;
+        margin-right: 0px;
+        display: inline-block;
+        float: left;
+        background-image: url("SLIDE-2/GUYS_SHORTS_FCMS_LONGBOARD.jpg");
+      }
+      .pbtn {
+        position: absolute; 
+        top: 500px;
+        width: 155px;
+        height: 54px;
+     
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.0);
+        background: transparent;
+        cursor: pointer;
+      }
+      #allbtns {
+        left: -7px; 
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div id="GuyShorts" style="display: block;">
+      
+    <img src="GUYS_SHORTS_FCMS_TITLE.jpg" id="shortTitle">
+      <div id="main-slider">
+      
+        <div class="aslide" id="splash" style="display: block;">
+          <div id="splash">
+
+          <div id="prep">
+          <img src="GUYS_SHORTS_FCMS_PREP2.jpg" class="showShort">
+          </div>
+
+          <div id="chino">
+          <img src="GUYS_SHORTS_FCMS_CHINO2.jpg" class="showShort"> 
+          </div>
+
+          <div id="swim">
+          <img src="GUYS_SHORTS_FCMS_SWIM2.jpg" class="showShort"> 
+          </div>
+
+           <div id="jogger">
+          <img src="GUYS_SHORTS_FCMS_JOGGER2.jpg" class="showShort"> 
+          </div>
+          
+          </div>
+        </div>
+        
+         <div class="aslide" id="splashA" style="display: none;">
+          <div id="splashA">
+          <div id="classic">
+          <img src="SLIDE-2/GUYS_SHORTS_FCMS_CLASSIC2.jpg" class="showShort">
+          </div>
+
+          <div id="cargo">
+          <img src="SLIDE-2/GUYS_SHORTS_FCMS_CLASSICCARGO2.jpg" class="showShort"> 
+          </div>
+
+          <div id="multiCargo">
+          <img src="SLIDE-2/GUYS_SHORTS_FCMS_MULTIPOCKETCARGO2.jpg" class="showShort"> 
+          </div>
+
+           <div id="longBoard">
+          <img src="SLIDE-2/GUYS_SHORTS_FCMS_LONGBOARD2.jpg" class="showShort"> 
+          </div>
+
+          </div>
+          
+        </div> 
+        
+      </div>
+ 
+      <div id="right-p" style="opacity: 0.8;"><img src="NEXT_BUTTON.png"></div>
+      <div id="left-p" style="opacity: 0.8;"><img src="NEXT_BUTTON.png"></div>
+      
+    </div>
+
+    <h3 align="center" style="width: 910px;height: 88px;font-family: Gotham-Black,Helvetica,Arial,sans-serif;text-transform: uppercase;font-size: 72px; line-height: 0px;
+    margin-top:40px;">
+
+    <span style="font-size: 26px;line-height: 28px;float: left;left: 288px;position: relative;">Starting At</span> 
+    <sup style="font-size: 38px;">$</sup>24</h3>
+  
+</body></html>

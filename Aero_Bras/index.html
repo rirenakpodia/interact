@@ -1,0 +1,563 @@
+
+<head>
+  <link rel="stylesheet" href="animate.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+var $jq = jQuery.noConflict();
+
+$jq(document).ready(function(){
+
+     $jq("#braWrap").mouseenter(function(){
+        $jq("#braOverLay").fadeOut();
+    });
+    $jq("#braWrap").mouseleave(function(){
+        $jq("#braOverLay").delay(500).fadeIn();
+    });
+
+    $jq("#braA").mouseenter(function(){
+
+        $jq("#braAgif").show();
+        
+        $jq("#braNavA").toggleClass("hover");
+    });
+    $jq("#braA").mouseleave(function(){
+        $jq("#braAgif").hide();
+        $jq("#braAgif").removeAttr('src','images/bralettes-A-1-USE.gif');
+        $jq("#braNavA").toggleClass("hover");
+        $jq("#braAgif").attr('src','images/bralettes-A-1-USE.gif');
+    });
+
+    $jq("#braB").mouseenter(function(){
+        $jq("#braBgif").show();
+        $jq("#braNavA").toggleClass("hover");
+    });
+    $jq("#braB").mouseleave(function(){
+        $jq("#braBgif").hide();
+        $jq("#braBgif").removeAttr('src','images/bralettes-B-USE.gif');
+        $jq("#braNavA").toggleClass("hover");
+        $jq("#braBgif").attr('src','images/bralettes-B-USE.gif');
+    });
+    
+
+    $jq("#braC").mouseenter(function(){
+        $jq("#braCgif").show();
+        $jq("#braNavA").toggleClass("hover");
+    });
+    $jq("#braC").mouseleave(function(){
+        $jq("#braCgif").hide();
+        $jq("#braCgif").removeAttr('src','images/bralettes-C-USE.gif');
+        $jq("#braNavA").toggleClass("hover");
+        $jq("#braCgif").attr('src','images/bralettes-C-USE.gif');
+    });
+
+
+
+
+    $jq("#braD").mouseenter(function(){
+        $jq("#braDgif").show();
+        $jq("#braNavB").toggleClass("hover");
+    });
+    $jq("#braD").mouseleave(function(){
+        $jq("#braDgif").hide();
+        $jq("#braDgif").removeAttr('src','images/multiway-bra-A.gif');
+        $jq("#braNavB").toggleClass("hover");
+        $jq("#braDgif").attr('src','images/multiway-bra-A.gif');
+    });
+
+    $jq("#braE").mouseenter(function(){
+        $jq("#braEgif").show();
+        $jq("#braNavB").toggleClass("hover");
+    });
+    $jq("#braE").mouseleave(function(){
+        $jq("#braEgif").hide();
+        $jq("#braEgif").removeAttr('src','images/multiway-bra-B.gif');
+        $jq("#braNavB").toggleClass("hover");
+        $jq("#braEgif").attr('src','images/multiway-bra-B.gif');
+    });
+    
+
+    $jq("#braF").mouseenter(function(){
+        $jq("#braFgif").show();
+        $jq("#braNavB").toggleClass("hover");
+    });
+    $jq("#braF").mouseleave(function(){
+        $jq("#braFgif").hide();
+        $jq("#braFgif").removeAttr('src','images/multiway-bra-C-USE.gif');
+        $jq("#braNavB").toggleClass("hover");
+        $jq("#braFgif").attr('src','images/multiway-bra-C-USE.gif');
+    });
+
+
+
+    $jq("#braG").mouseenter(function(){
+        $jq("#braGgif").show();
+        $jq("#braNavC").toggleClass("hover");
+    });
+    $jq("#braG").mouseleave(function(){
+        $jq("#braGgif").hide();
+        $jq("#braGgif").removeAttr('src','images/push-up-A.gif');
+        $jq("#braNavC").toggleClass("hover");
+        $jq("#braGgif").attr('src','images/push-up-A.gif');
+    });
+
+    $jq("#braH").mouseenter(function(){
+        $jq("#braHgif").show();
+        $jq("#braNavC").toggleClass("hover");
+    });
+    $jq("#braH").mouseleave(function(){
+        $jq("#braHgif").hide();
+        $jq("#braHgif").removeAttr('src','images/push-up-B.gif');
+        $jq("#braNavC").toggleClass("hover");
+        $jq("#braHgif").attr('src','images/push-up-B.gif');
+    });
+    
+
+    $jq("#braI").mouseenter(function(){
+        $jq("#braIgif").show();
+        $jq("#braNavC").toggleClass("hover");
+    });
+    $jq("#braI").mouseleave(function(){
+        $jq("#braIgif").hide();
+        $jq("#braIgif").removeAttr('src','images/push-up-C.gif');
+        $jq("#braNavC").toggleClass("hover");
+        $jq("#braIgif").attr('src','images/push-up-C.gif');
+    });
+
+
+    $jq("#braJ").mouseenter(function(){
+        $jq("#braJgif").show();
+        $jq("#braNavD").toggleClass("hover");
+    });
+    $jq("#braJ").mouseleave(function(){
+        $jq("#braJgif").hide();
+        $jq("#braJgif").removeAttr('src','images/sport-bras-A.gif');
+        $jq("#braNavD").toggleClass("hover");
+        $jq("#braJgif").attr('src','images/sport-bras-A.gif');
+    });
+
+    $jq("#braK").mouseenter(function(){
+        $jq("#braKgif").show();
+        $jq("#braNavD").toggleClass("hover");
+    });
+    $jq("#braK").mouseleave(function(){
+        $jq("#braKgif").hide();
+        $jq("#braKgif").removeAttr('src','images/sport-bras-B.gif');
+        $jq("#braNavD").toggleClass("hover");
+        $jq("#braKgif").attr('src','images/sport-bras-B.gif');
+    });
+    
+
+    $jq("#braL").mouseenter(function(){
+        $jq("#braLgif").show();
+        $jq("#braNavD").toggleClass("hover");
+    });
+    $jq("#braL").mouseleave(function(){
+        $jq("#braLgif").hide();
+        $jq("#braLgif").removeAttr('src','images/sport-bras-C.gif');
+        $jq("#braNavD").toggleClass("hover");
+        $jq("#braLgif").attr('src','images/sport-bras-C.gif');
+    });
+
+
+    $jq("#braNavA").mouseenter(function(){
+        $jq("#braNavA").addClass("hover");
+        $jq("#braAgif").fadeIn();
+        $jq("#braBgif").fadeIn();
+        $jq("#braCgif").fadeIn();
+    });
+    $jq("#braNavA").mouseleave(function(){
+        $jq("#braNavA").removeClass("hover");
+        $jq("#braCgif").fadeOut();
+        $jq("#braBgif").fadeOut();        
+        $jq("#braAgif").fadeOut();
+
+        
+    });
+
+    $jq("#braNavB").mouseenter(function(){
+        $jq("#braNavB").addClass("hover");
+        $jq("#braDgif").fadeIn();
+        $jq("#braEgif").fadeIn();
+        $jq("#braFgif").fadeIn();
+    });
+    $jq("#braNavB").mouseleave(function(){
+        $jq("#braNavB").removeClass("hover");
+        $jq("#braFgif").fadeOut();
+        $jq("#braEgif").fadeOut();
+        $jq("#braDgif").fadeOut();
+        
+    });
+
+    $jq("#braNavC").mouseenter(function(){
+        $jq("#braNavC").addClass("hover");
+        $jq("#braGgif").fadeIn();
+        $jq("#braHgif").fadeIn();
+        $jq("#braIgif").fadeIn();
+    });
+    $jq("#braNavC").mouseleave(function(){
+        $jq("#braNavC").removeClass("hover");
+        $jq("#braIgif").fadeOut();
+        $jq("#braHgif").fadeOut();
+        $jq("#braGgif").fadeOut();
+        
+    });
+
+    $jq("#braNavD").mouseenter(function(){
+        $jq("#braNavD").addClass("hover");
+        $jq("#braJgif").fadeIn();
+        $jq("#braKgif").fadeIn();
+        $jq("#braLgif").fadeIn();
+    });
+    $jq("#braNavD").mouseleave(function(){
+        $jq("#braNavD").removeClass("hover");
+        $jq("#braLgif").fadeOut();
+        $jq("#braKgif").fadeOut();
+        $jq("#braJgif").fadeOut();
+        
+    });
+
+});
+</script>
+
+
+<style>
+#braWrap {
+    width: 910px;
+    height: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#braOverLay {
+    position: absolute;
+    width: 910px;
+    height:858px;
+}
+#braARow {
+    width:228px;
+    height:930px;
+    display: inline-block;
+    float: left;
+}
+#braA {
+    width:228px;
+    height:285px;
+    background-image: url("images/bralettes-A-BW.jpg");
+    overflow: hidden;
+
+}
+#braB {
+    width:228px;
+    height:286px;
+    background-image: url("images/bralettes-B.jpg");
+    overflow: hidden;
+
+}
+#braC {
+    width:228px;
+    height:286px;
+    background-image: url("images/bralettes-C.jpg");
+    overflow: hidden;
+
+}
+#braBRow {
+    width:228px;
+    height:930px;
+    display: inline-block;
+    float: left;
+}
+#braD {
+    width:228px;
+    height:285px;
+    background-image: url("images/multiway-bra-A-BW.jpg");
+    overflow: hidden;
+
+}
+#braE {
+    width:228px;
+    height:286px;
+    background-image: url("images/multiway-bra-B.jpg");
+    overflow: hidden;
+
+}
+#braF {
+    width:228px;
+    height:286px;
+    background-image: url("images/multiway-bra-C.jpg");
+    overflow: hidden;
+
+}
+
+#braCRow {
+    width:228px;
+    height:930px;
+    display: inline-block;
+    float: left;
+}
+#braG {
+    width:228px;
+    height:285px;
+    background-image: url("images/push-up-A-BW.jpg");
+    overflow: hidden;
+
+}
+#braH {
+    width:228px;
+    height:286px;
+    background-image: url("images/push-up-B.jpg");
+    overflow: hidden;
+
+}
+#braI {
+    width:228px;
+    height:286px;
+    background-image: url("images/push-up-C.jpg");
+    overflow: hidden;
+
+}
+
+#braDRow {
+    width:226px;
+    height:930px;
+    display: inline-block;
+    float: left;
+}
+#braJ {
+    width:226px;
+    height:285px;
+    background-image: url("images/sport-bras-A-BW.jpg");
+    overflow: hidden;
+
+}
+#braK {
+    width:226px;
+    height:286px;
+    background-image: url("images/sport-bras-B.jpg");
+    overflow: hidden;
+
+}
+#braL {
+    width:226px;
+    height:286px;
+    background-image: url("images/sport-bras-C.jpg");
+    overflow: hidden;
+
+}
+
+
+#braNavA {
+    width: 228px;
+    height: 58px;
+    background-color: #ff8d81;
+    display: inline-block;
+    float: left;
+    margin-top: 7px; 
+    -webkit-transition:  background-color .25s;
+    transition: background-color .25s;       
+}
+#braNavA.hover {
+    width: 228px;
+    height: 58px;
+    background-color: #ff4f4f;
+    -webkit-transition:  background-color .25s;
+    transition: background-color .25s;    
+}
+#braNavB {
+    width: 228px;
+    height: 58px;
+    background-color: #ff8d81;
+    display: inline-block;
+    float: left;
+    margin-top: 7px;   
+    -webkit-transition:  background-color .25s;
+    transition: background-color .25s; 
+}
+#braNavB.hover {
+    width: 228px;
+    height: 58px;
+    background-color: #ff4f4f; 
+    -webkit-transition:  background-color .25s;
+    transition: background-color .25s;   
+}
+#braNavC {
+    width: 228px;
+    height: 58px;
+    background-color: #ff8d81;
+    display: inline-block;
+    float: left;
+    margin-top: 7px;
+    -webkit-transition:  background-color .25s;
+    transition: background-color .25s;    
+}
+#braNavC.hover {
+    width: 228px;
+    height: 58px;
+    background-color: #ff4f4f; 
+    -webkit-transition:  background-color .25s;
+    transition: background-color .25s;   
+}
+#braNavD {
+    width: 226px;
+    height: 58px;
+    background-color: #ff8d81;
+    display: inline-block;
+    float: left;
+    margin-top: 7px;    
+    -webkit-transition:  background-color .25s;
+    transition: background-color .25s;
+}
+#braNavD.hover {
+    width: 226px;
+    height: 58px;
+    background-color: #ff4f4f;   
+    -webkit-transition:  background-color .25s;
+    transition: background-color .25s;
+}
+</style>
+
+<div id="braWrap">
+
+<img src="images/bra-copy-overlay.png" id="braOverLay">
+
+
+<!-- ROW A BRALETTES -->
+
+<div id="braARow">
+
+<!-- BRA A -->
+
+<div id="braA">
+<img src="images/bralettes-A-1-USE.gif" width="228" height="285" id="braAgif" style="display:none;" class="animated fadeIn">
+</div>
+
+<!-- BRA B -->
+
+<div id="braB">
+<img src="images/bralettes-B-USE.gif" width="228" height="286" id="braBgif" style="display:none;" class="animated fadeIn">
+</div>
+
+<!-- BRA C -->
+
+<div id="braC">
+
+<img src="images/bralettes-C-USE.gif" width="228" height="286" id="braCgif" style="display:none;" class="animated fadeIn">
+
+</div>
+
+<div id="braNavA">
+<img src="images/bralettes-nav.png" width="228" height="58" >
+</div>
+
+
+</div>
+
+
+
+
+<!-- ROW B MULTIWAY -->
+
+<div id="braBRow">
+
+<!-- BRA D -->
+
+<div id="braD">
+<img src="images/multiway-bra-A.gif" width="228" height="285" id="braDgif" style="display:none;" class="animated fadeIn">
+</div>
+
+<!-- BRA E -->
+
+<div id="braE">
+<img src="images/multiway-bra-B.gif" width="228" height="286" id="braEgif" style="display:none;" class="animated fadeIn">
+</div>
+
+<!-- BRA F -->
+
+<div id="braF">
+
+<img src="images/multiway-bra-C-USE.gif" width="228" height="286" id="braFgif" style="display:none;" class="animated fadeIn">
+
+</div>
+
+<!-- NAV MULTIWAY -->
+<div id="braNavB">
+<img src="images/multiway-nav.png" width="228" height="58" >
+</div>
+
+
+</div>
+
+
+<!-- ROW C PUSH UP-->
+
+<div id="braCRow">
+
+<!-- BRA G -->
+
+<div id="braG">
+<img src="images/push-up-A.gif" width="228" height="285" id="braGgif" style="display:none;" class="animated fadeIn">
+</div>
+
+<!-- BRA H -->
+
+<div id="braH">
+<img src="images/push-up-B.gif" width="228" height="286" id="braHgif" style="display:none;" class="animated fadeIn">
+</div>
+
+<!-- BRA I-->
+
+<div id="braI">
+
+<img src="images/push-up-C.gif" width="228" height="286" id="braIgif" style="display:none;" class="animated fadeIn">
+
+</div>
+
+
+<!-- NAV PUSH UP-->
+<div id="braNavC">
+<img src="images/push-up-nav.png" width="228" height="58" >
+</div>
+
+
+</div>
+
+<!-- ROW D SPORTS-->
+
+<div id="braDRow">
+
+<!-- BRA J -->
+
+<div id="braJ">
+<img src="images/sport-bras-A.gif" width="226" height="285" id="braJgif" style="display:none;" class="animated fadeIn">
+</div>
+
+<!-- BRA K -->
+
+<div id="braK">
+<img src="images/sport-bras-B.gif" width="226" height="286" id="braKgif" style="display:none;" class="animated fadeIn">
+</div>
+
+<!-- BRA L-->
+
+<div id="braL">
+
+<img src="images/sport-bras-C.gif" width="226" height="286" id="braLgif" style="display:none;" class="animated fadeIn">
+
+</div>
+
+<!-- NAV SPORT -->
+<div id="braNavD">
+<img src="images/sport-nav.png" width="226" height="58" >
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- ROMANCE COPY-->
+<img src="images/LLDSPR_FCMS__BRA6_21.png" width="910" height="142" style="margin-top: 7px;">
+
+</div>
+
